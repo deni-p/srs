@@ -1,0 +1,784 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{315059ED-E449-4C6C-AE69-0BBFE11DF59D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SRS.DeskApp</RootNamespace>
+    <AssemblyName>SRS.DeskApp</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\PUBLISH\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x64</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>C9D6EC15C0DD4C98A6E6CA0FBB9E75C913767A52</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>SRS.DeskApp_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AForge">
+      <HintPath>..\Driver\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Controls">
+      <HintPath>..\Driver\AForge.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video">
+      <HintPath>..\Driver\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="Aspose.Cells, Version=8.5.1.0, Culture=neutral, PublicKeyToken=716fcc553a201e56, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Aspose.Cells.8.5.1\lib\net40\Aspose.Cells.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Equin.ApplicationFramework.BindingListView">
+      <HintPath>..\packages\Equin.ApplicationFramework.BindingListView.1.4.5222.35545\lib\net40-Client\Equin.ApplicationFramework.BindingListView.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport, Version=2015.3.7.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\FastReports\FastReport.Net Demo\FastReport.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Bars, Version=2015.3.7.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\FastReports\FastReport.Net Demo\FastReport.Bars.dll</HintPath>
+    </Reference>
+    <Reference Include="FastReport.Editor, Version=2015.3.7.0, Culture=neutral, PublicKeyToken=db7e5ce63278458c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files (x86)\FastReports\FastReport.Net Demo\FastReport.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>..\packages\NPOI binary 2.1.3.1\dotnet4\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.pSX">
+      <HintPath>obj\Debug\Interop.pSX.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="linq2db">
+      <HintPath>..\packages\linq2db.1.0.7.1\lib\net45\linq2db.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MetroModernUI.1.3.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MetroModernUI.1.3.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.3.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\MetroModernUI.1.3.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>..\packages\NPOI binary 2.1.3.1\dotnet4\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>..\packages\NPOI binary 2.1.3.1\dotnet4\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>..\packages\NPOI binary 2.1.3.1\dotnet4\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>..\packages\NPOI binary 2.1.3.1\dotnet4\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AboutBox1.Designer.cs">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Configuration.cs" />
+    <Compile Include="Context\CariNamaPetani_Result.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\device_config.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\lookup_header.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\lookup_line.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\Masterlist2.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\master_list.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\m_conf_acc.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\rendeman.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\shared_core_sampling.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\shared_timbangan_in.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\spLoadBayarAll_Result.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\spLoadBayarMitra_Result.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\spLoadCicilan_Result.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\SRS.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SRS.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\SRS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\SRS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SRS.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Context\tbl_error.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\tbl_kabupaten.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\tbl_kecamatan.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\tbl_kelurahan.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\tbl_pendaftaran_mobil.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\tbl_periode_giling.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\tbl_periode_trx.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\tbl_transit_core_sampling.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\tbl_transit_scan_id_device.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\tbl_transit_scan_id_timbangan.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\tbl_transit_timbangan.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\Tiket.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\tiket_header.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\tiket_history.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\tiket_template.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\trans_data_header.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\trans_data_line.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\trans_data_saldo.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\trans_data_type.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\User.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\user_access_list.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\user_master_form.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\user_master_menu.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\user_master_modules.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\user_table.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Context\user_table_group.cs">
+      <DependentUpon>SRS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\Repository.cs" />
+    <Compile Include="Control\FilterModel.cs" />
+    <Compile Include="Control\NumericTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Control\Role.cs" />
+    <Compile Include="CoreSampling.cs" />
+    <Compile Include="CoreSamplingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CoreSamplingForm.Designer.cs">
+      <DependentUpon>CoreSamplingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CoreSamplingManualForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CoreSamplingManualForm.Designer.cs">
+      <DependentUpon>CoreSamplingManualForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeviceConfigurationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeviceConfigurationForm.Designer.cs">
+      <DependentUpon>DeviceConfigurationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExeConfigurationFileMap.cs" />
+    <Compile Include="frmListMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListMenu.Designer.cs">
+      <DependentUpon>frmListMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmPotongan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPotongan.Designer.cs">
+      <DependentUpon>frmPotongan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTransGrPo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTransGrPo.Designer.cs">
+      <DependentUpon>FrmTransGrPo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUnloading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUnloading.Designer.cs">
+      <DependentUpon>frmUnloading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSetting.Designer.cs">
+      <DependentUpon>frmSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterAcc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterAcc.Designer.cs">
+      <DependentUpon>MasterAcc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterListEntryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterListEntryForm.Designer.cs">
+      <DependentUpon>MasterListEntryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CoreSamplingSim.cs" />
+    <Compile Include="Model\InfoTimbangan.cs" />
+    <Compile Include="Model\Masterlist.cs" />
+    <Compile Include="Model\StatusTimbangan.cs" />
+    <Compile Include="Model\ThreadTimbangan.cs" />
+    <Compile Include="Model\TimbanganInSim.cs" />
+    <Compile Include="RegistrasiForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrasiForm.Designer.cs">
+      <DependentUpon>RegistrasiForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RegistrasiNewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RegistrasiNewForm.Designer.cs">
+      <DependentUpon>RegistrasiNewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SapB1.cs" />
+    <Compile Include="Sap\Sap.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SettingSAP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingSAP.Designer.cs">
+      <DependentUpon>SettingSAP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimbanganInManualForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimbanganInManualForm.Designer.cs">
+      <DependentUpon>TimbanganInManualForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimbanganMasukForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimbanganMasukForm.Designer.cs">
+      <DependentUpon>TimbanganMasukForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimbanganOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimbanganOut.Designer.cs">
+      <DependentUpon>TimbanganOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransByrCicilan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransByrCicilan.Designer.cs">
+      <DependentUpon>TransByrCicilan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransCicilan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransCicilan.Designer.cs">
+      <DependentUpon>TransCicilan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TransNonKKPE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransNonKKPE.Designer.cs">
+      <DependentUpon>TransNonKKPE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Trans_Pencairan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trans_Pencairan.Designer.cs">
+      <DependentUpon>Trans_Pencairan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TTAEntryNonRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TTAEntryNonRegister.Designer.cs">
+      <DependentUpon>TTAEntryNonRegister.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TTAFilterTGL.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TTAFilterTGL.Designer.cs">
+      <DependentUpon>TTAFilterTGL.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TTAListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TTAListForm.Designer.cs">
+      <DependentUpon>TTAListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\GlobalController.cs" />
+    <Compile Include="Login2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login2.Designer.cs">
+      <DependentUpon>Login2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TTAForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TTAForm.Designer.cs">
+      <DependentUpon>TTAForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterListMasterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterListMasterForm.Designer.cs">
+      <DependentUpon>MasterListMasterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="masterlistPrintPreview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="masterlistPrintPreview.Designer.cs">
+      <DependentUpon>masterlistPrintPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TTAPrintFilter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TTAPrintFilter.Designer.cs">
+      <DependentUpon>TTAPrintFilter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TTAPrinting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TTAPrinting.Designer.cs">
+      <DependentUpon>TTAPrinting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserForm.Designer.cs">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterlistChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterlistChart.Designer.cs">
+      <DependentUpon>MasterlistChart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MasterListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MasterListForm.Designer.cs">
+      <DependentUpon>MasterListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MDIMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MDIMainForm.Designer.cs">
+      <DependentUpon>MDIMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MetroForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MetroForm.Designer.cs">
+      <DependentUpon>MetroForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UploadExcelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UploadExcelForm.Designer.cs">
+      <DependentUpon>UploadExcelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserListForm.Designer.cs">
+      <DependentUpon>UserListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="userSetting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="userSetting.Designer.cs">
+      <DependentUpon>userSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Validasi.cs" />
+    <EmbeddedResource Include="AboutBox1.resx">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoreSamplingForm.resx">
+      <DependentUpon>CoreSamplingForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoreSamplingManualForm.resx">
+      <DependentUpon>CoreSamplingManualForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeviceConfigurationForm.resx">
+      <DependentUpon>DeviceConfigurationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListMenu.resx">
+      <DependentUpon>frmListMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmPotongan.resx">
+      <DependentUpon>frmPotongan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTransGrPo.resx">
+      <DependentUpon>FrmTransGrPo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUnloading.resx">
+      <DependentUpon>frmUnloading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSetting.resx">
+      <DependentUpon>frmSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterAcc.resx">
+      <DependentUpon>MasterAcc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterListEntryForm.resx">
+      <DependentUpon>MasterListEntryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrasiForm.resx">
+      <DependentUpon>RegistrasiForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RegistrasiNewForm.resx">
+      <DependentUpon>RegistrasiNewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingSAP.resx">
+      <DependentUpon>SettingSAP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimbanganInManualForm.resx">
+      <DependentUpon>TimbanganInManualForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimbanganMasukForm.resx">
+      <DependentUpon>TimbanganMasukForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimbanganOut.resx">
+      <DependentUpon>TimbanganOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransByrCicilan.resx">
+      <DependentUpon>TransByrCicilan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransCicilan.resx">
+      <DependentUpon>TransCicilan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransNonKKPE.resx">
+      <DependentUpon>TransNonKKPE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Trans_Pencairan.resx">
+      <DependentUpon>Trans_Pencairan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TTAEntryNonRegister.resx">
+      <DependentUpon>TTAEntryNonRegister.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TTAFilterTGL.resx">
+      <DependentUpon>TTAFilterTGL.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TTAListForm.resx">
+      <DependentUpon>TTAListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login2.resx">
+      <DependentUpon>Login2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TTAForm.resx">
+      <DependentUpon>TTAForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterListMasterForm.resx">
+      <DependentUpon>MasterListMasterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="masterlistPrintPreview.resx">
+      <DependentUpon>masterlistPrintPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TTAPrintFilter.resx">
+      <DependentUpon>TTAPrintFilter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TTAPrinting.resx">
+      <DependentUpon>TTAPrinting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserForm.resx">
+      <DependentUpon>UserForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterlistChart.resx">
+      <DependentUpon>MasterlistChart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MasterListForm.resx">
+      <DependentUpon>MasterListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MDIMainForm.resx">
+      <DependentUpon>MDIMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MetroForm.resx">
+      <DependentUpon>MetroForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UploadExcelForm.resx">
+      <DependentUpon>UploadExcelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserListForm.resx">
+      <DependentUpon>UserListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="userSetting.resx">
+      <DependentUpon>userSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="Context\SRS.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SRS.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="App.Config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="Context\SRS.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SRS.edmx</DependentUpon>
+      <LastGenOutput>SRS.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Context\SRS.edmx.diagram">
+      <DependentUpon>SRS.edmx</DependentUpon>
+    </None>
+    <None Include="Context\SRS.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SRS.edmx</DependentUpon>
+      <LastGenOutput>SRS.cs</LastGenOutput>
+    </None>
+    <None Include="LinqToDB.Templates\!ReadMe.LinqToDB.md" />
+    <None Include="LinqToDB.Templates\DataAnnotations.ttinclude" />
+    <None Include="LinqToDB.Templates\DataModel.ttinclude" />
+    <None Include="LinqToDB.Templates\EditableObject.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.Access.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.DB2.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.Firebird.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.Informix.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.MySql.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.Oracle.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.PostgreSQL.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.SapHana.Tools.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.SqlCe.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.SQLite.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.SqlServer.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.Sybase.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.Tools.ttinclude" />
+    <None Include="LinqToDB.Templates\LinqToDB.ttinclude" />
+    <None Include="LinqToDB.Templates\NotifyPropertyChanged.ttinclude" />
+    <None Include="LinqToDB.Templates\PluralizationService.ttinclude" />
+    <None Include="LinqToDB.Templates\T4Model.ttinclude" />
+    <None Include="LinqToDB.Templates\Validation.ttinclude" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="template\Template KTM.xls">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <None Include="SRS.DeskApp_TemporaryKey.pfx" />
+    <None Include="template\Template Blank.xls" />
+    <None Include="template\Template KTM v2.xls" />
+    <None Include="template\Template TIKET.xls" />
+    <None Include="template\Template-2.xlsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gbr1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1433044326_handshake.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1433044226_edit_property.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="LinqToDB.Templates\CopyMe.SapHana.tt.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="SAPbobsCOM">
+      <Guid>{FC8030BE-F5D2-4B8E-8F92-44228FE30090}</Guid>
+      <VersionMajor>9</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
