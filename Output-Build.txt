@@ -1,0 +1,74 @@
+﻿1>------ Rebuild All started: Project: SRS.DeskApp, Configuration: Debug Any CPU ------
+2>------ Skipped Rebuild All: Project: SRS.DataReader, Configuration: Debug Any CPU ------
+2>Project not selected to build for this solution configuration 
+3>------ Rebuild All started: Project: TCPClient, Configuration: Debug Any CPU ------
+3>  COM Reference 'pSX' is the interop assembly for ActiveX control 'AxpSX' but was marked to be linked by the compiler with the /link flag. This COM reference will be treated as a reference and will not be linked.
+3>  TCPClient -> E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\TCPClient\bin\Debug\TCPClient.exe
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\Controller\Repository.cs(103,38,103,40): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\Controller\Repository.cs(123,38,123,40): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\Controller\Repository.cs(132,38,132,40): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\Controller\Repository.cs(140,38,140,40): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\CoreSamplingForm.cs(595,33,595,46): warning CS0472: The result of the expression is always 'false' since a value of type 'SRS.DeskApp.CoreSamplingForm.StateCoreSampling' is never equal to 'null' of type 'SRS.DeskApp.CoreSamplingForm.StateCoreSampling?'
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\CoreSamplingForm.cs(1088,23,1088,30): warning CS0467: Ambiguity between method 'pSX._ucSPS.Connect(string, int, bool)' and non-method 'pSX.__ucSPS_Event.Connect'. Using method group.
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\CoreSamplingForm.cs(1140,46,1140,48): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\CoreSamplingForm.cs(1144,40,1144,42): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\frmUnloading.cs(41,33,41,46): warning CS0472: The result of the expression is always 'false' since a value of type 'SRS.DeskApp.frmUnloading.UnloadingState' is never equal to 'null' of type 'SRS.DeskApp.frmUnloading.UnloadingState?'
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\TimbanganMasukForm.cs(182,30,182,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\TimbanganMasukForm.cs(393,37,393,47): warning CS0472: The result of the expression is always 'false' since a value of type 'SRS.DeskApp.TimbanganMasukForm.StateTimbangan' is never equal to 'null' of type 'SRS.DeskApp.TimbanganMasukForm.StateTimbangan?'
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\TimbanganOut.cs(93,35,93,36): warning CS0168: The variable 't' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(262,30,262,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(293,30,293,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(307,30,307,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(327,34,327,36): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(345,30,345,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(361,30,361,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(405,30,405,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(420,30,420,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(436,30,436,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(661,30,661,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(889,30,889,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(902,30,902,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(1135,30,1135,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(1164,30,1164,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(1180,30,1180,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(1193,30,1193,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(1218,30,1218,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(1241,30,1241,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(1274,30,1274,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(1300,30,1300,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(1319,30,1319,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(1331,30,1331,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(1350,30,1350,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(1369,30,1369,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(1393,30,1393,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(1492,30,1492,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(1550,30,1550,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(1589,30,1589,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(1690,30,1690,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(1732,30,1732,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(1767,30,1767,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DAO\GlobalController.cs(1780,30,1780,32): warning CS0168: The variable 'ex' is declared but never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\TTAForm.cs(41,17,41,45): warning CS0472: The result of the expression is always 'true' since a value of type 'int' is never equal to 'null' of type 'int?'
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\TTAForm.cs(172,21,172,49): warning CS0472: The result of the expression is always 'true' since a value of type 'int' is never equal to 'null' of type 'int?'
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\TTAForm.cs(183,21,183,49): warning CS0472: The result of the expression is always 'true' since a value of type 'int' is never equal to 'null' of type 'int?'
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\MasterListMasterForm.cs(23,17,23,52): warning CS0472: The result of the expression is always 'true' since a value of type 'int' is never equal to 'null' of type 'int?'
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\UserForm.cs(30,17,30,34): warning CS0472: The result of the expression is always 'true' since a value of type 'int' is never equal to 'null' of type 'int?'
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\UserForm.cs(112,25,112,42): warning CS0472: The result of the expression is always 'true' since a value of type 'int' is never equal to 'null' of type 'int?'
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\MasterListForm.cs(473,25,473,30): warning CS0219: The variable 'jarak' is assigned but its value is never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\CoreSamplingForm.cs(27,14,27,22): warning CS0414: The field 'SRS.DeskApp.CoreSamplingForm.waitFile' is assigned but its value is never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\CoreSamplingForm.cs(28,14,28,29): warning CS0414: The field 'SRS.DeskApp.CoreSamplingForm.readFileSuccess' is assigned but its value is never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\DeviceConfigurationForm.cs(19,39,19,48): warning CS0169: The field 'SRS.DeskApp.DeviceConfigurationForm.devConfig' is never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\Model\StatusTimbangan.cs(14,21,14,30): warning CS0169: The field 'SRS.DeskApp.Model.StatusTimbangan.doc_entry' is never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\Model\StatusTimbangan.cs(15,21,15,31): warning CS0169: The field 'SRS.DeskApp.Model.StatusTimbangan.base_entry' is never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\RegistrasiForm.cs(27,22,27,31): warning CS0414: The field 'SRS.DeskApp.RegistrasiForm.regstatus' is assigned but its value is never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\RegistrasiNewForm.cs(26,47,26,58): warning CS0169: The field 'SRS.DeskApp.RegistrasiNewForm.pendaftaran' is never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\RegistrasiNewForm.cs(27,22,27,31): warning CS0414: The field 'SRS.DeskApp.RegistrasiNewForm.regstatus' is assigned but its value is never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\TimbanganMasukForm.cs(21,16,21,24): warning CS0169: The field 'SRS.DeskApp.TimbanganMasukForm.ip_gate1' is never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\TimbanganMasukForm.cs(22,16,22,24): warning CS0169: The field 'SRS.DeskApp.TimbanganMasukForm.ip_gate2' is never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\TimbanganMasukForm.cs(23,16,23,24): warning CS0169: The field 'SRS.DeskApp.TimbanganMasukForm.ip_gate3' is never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\TimbanganMasukForm.cs(24,16,24,24): warning CS0169: The field 'SRS.DeskApp.TimbanganMasukForm.ip_gate4' is never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\TTAListForm.cs(262,55,262,69): warning CS0169: The field 'SRS.DeskApp.TTAListForm.TiketFieldName' is never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\Login2.cs(20,14,20,21): warning CS0414: The field 'SRS.DeskApp.Login2.success' is assigned but its value is never used
+1>E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\userSetting.cs(15,31,15,37): warning CS0169: The field 'SRS.DeskApp.userSetting.config' is never used
+1>  SRS.DeskApp -> E:\CRONOS PROJECT\JATIS\SUGAR LABINTA\project\SRS NEW\SRS.DeskApp\bin\Debug\SRS.DeskApp.exe
+========== Rebuild All: 2 succeeded, 0 failed, 1 skipped ==========
