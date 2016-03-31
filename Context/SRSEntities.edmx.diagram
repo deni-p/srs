@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5bd1b50ede074c028f5d9edcf5c214b8" Name="Diagram" ZoomLevel="53">
+        <EntityTypeShape EntityType="ktm_dbModel.lookup_header" Width="1.5" PointX="10.75" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.lookup_line" Width="1.5" PointX="13" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.master_list" Width="1.5" PointX="7.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.Masterlist2" Width="1.5" PointX="9.75" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.rendeman" Width="1.5" PointX="11.75" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.shared_core_sampling" Width="1.5" PointX="13.75" PointY="14.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.shared_timbangan_in" Width="1.5" PointX="15.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.tbl_error" Width="1.5" PointX="15.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.tbl_kabupaten" Width="1.5" PointX="10.75" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.tbl_kecamatan" Width="1.5" PointX="13" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.tbl_kelurahan" Width="1.5" PointX="15.25" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.tbl_pendaftaran_mobil" Width="1.5" PointX="0.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.tbl_periode_giling" Width="1.5" PointX="15.75" PointY="12.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.tbl_periode_trx" Width="1.5" PointX="15.75" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.tbl_transit_core_sampling" Width="1.5" PointX="3" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.tbl_transit_scan_id_device" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.tbl_transit_scan_id_timbangan" Width="1.5" PointX="3" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.tbl_transit_timbangan" Width="1.5" PointX="3" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.tblTicketNo" Width="1.5" PointX="11.75" PointY="18.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.tblTransaction" Width="1.5" PointX="17.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.Tiket" Width="1.5" PointX="17.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.tiket_backup" Width="1.5" PointX="17.75" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.tiket_header" Width="1.5" PointX="13.75" PointY="20.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.tiket_history" Width="1.5" PointX="19.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.tiket_template" Width="1.5" PointX="19.75" PointY="13.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.trans_data_header" Width="1.5" PointX="5.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.trans_data_header2" Width="1.5" PointX="19.75" PointY="16.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.trans_data_line" Width="1.5" PointX="8" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.trans_data_saldo" Width="1.5" PointX="19.75" PointY="21.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.trans_data_type" Width="1.5" PointX="5.75" PointY="13.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.User" Width="1.5" PointX="5.75" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.user_access_list" Width="1.5" PointX="21.75" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.user_master_form" Width="1.5" PointX="5.75" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.user_master_menu" Width="1.5" PointX="8" PointY="2.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.user_master_modules" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.user_menu" Width="1.5" PointX="21.75" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.user_table" Width="1.5" PointX="13" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.user_table_group" Width="1.5" PointX="10.75" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.device_config" Width="1.5" PointX="21.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="ktm_dbModel.field_object" Width="1.5" PointX="7.75" PointY="23.375" IsExpanded="true" />
+        <AssociationConnector Association="ktm_dbModel.FK_lookup_line_lookup_header" ManuallyRouted="false" />
+        <AssociationConnector Association="ktm_dbModel.FK_tbl_kecamatan_tbl_kabupaten" ManuallyRouted="false" />
+        <AssociationConnector Association="ktm_dbModel.FK_tbl_kelurahan_tbl_kecamatan" ManuallyRouted="false" />
+        <AssociationConnector Association="ktm_dbModel.FK_tbl_transit_core_sampling_tbl_pendaftaran_mobil" ManuallyRouted="false" />
+        <AssociationConnector Association="ktm_dbModel.FK_tbl_transit_scan_id_device_tbl_pendaftaran_mobil" ManuallyRouted="false" />
+        <AssociationConnector Association="ktm_dbModel.FK_tbl_transit_scan_id_timbangan_tbl_pendaftaran_mobil" ManuallyRouted="false" />
+        <AssociationConnector Association="ktm_dbModel.FK_tbl_transit_timbangan_tbl_pendaftaran_mobil" ManuallyRouted="false" />
+        <AssociationConnector Association="ktm_dbModel.FK_Detail_TransData_transdata" ManuallyRouted="false" />
+        <AssociationConnector Association="ktm_dbModel.FK_trans_data_line_trans_data_type" ManuallyRouted="false" />
+        <AssociationConnector Association="ktm_dbModel.FK_user_master_menu_user_master_form" ManuallyRouted="false" />
+        <AssociationConnector Association="ktm_dbModel.FK_user_master_menu_user_master_modules" ManuallyRouted="false" />
+        <AssociationConnector Association="ktm_dbModel.FK_User_Table_User_table_group" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,2680 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SRSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="device_config">
+          <Key>
+            <PropertyRef Name="device_id" />
+          </Key>
+          <Property Name="device_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="device_name" Type="varchar" MaxLength="50" />
+          <Property Name="device_ip" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="location" Type="varchar" MaxLength="100" />
+          <Property Name="create_date" Type="datetime" />
+          <Property Name="create_by" Type="varchar" MaxLength="10" />
+          <Property Name="update_date" Type="datetime" />
+          <Property Name="update_by" Type="varchar" MaxLength="10" />
+          <Property Name="status" Type="bit" />
+          <Property Name="id" Type="int" />
+          <Property Name="username" Type="varchar" MaxLength="25" />
+          <Property Name="password" Type="varchar" MaxLength="255" />
+          <Property Name="type_id" Type="varchar" MaxLength="20" />
+          <Property Name="fld_data_nir" Type="varchar" MaxLength="255" />
+          <Property Name="fld_data_manual" Type="varchar" MaxLength="255" />
+          <Property Name="ip_nir" Type="varchar" MaxLength="50" />
+          <Property Name="folder_nir" Type="varchar" MaxLength="255" />
+          <Property Name="print_max_count" Type="int" />
+          <Property Name="print_counter" Type="int" />
+        </EntityType>
+        <EntityType Name="lookup_header">
+          <Key>
+            <PropertyRef Name="header_id" />
+          </Key>
+          <Property Name="header_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="header_desc" Type="varchar" MaxLength="50" />
+          <Property Name="created_by" Type="varchar" MaxLength="10" />
+          <Property Name="created_date" Type="datetime" />
+          <Property Name="update_by" Type="varchar" MaxLength="10" />
+          <Property Name="update_date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="lookup_line">
+          <Key>
+            <PropertyRef Name="line_id" />
+          </Key>
+          <Property Name="line_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="header_id" Type="int" />
+          <Property Name="line_code" Type="varchar" MaxLength="5" />
+          <Property Name="line_desc" Type="varchar" MaxLength="50" />
+          <Property Name="created_by" Type="varchar" MaxLength="10" />
+          <Property Name="created_date" Type="datetime" />
+          <Property Name="update_by" Type="varchar" MaxLength="10" />
+          <Property Name="update_date" Type="datetime" />
+        </EntityType>
+        <EntityType Name="m_conf_acc">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="inv_code" Type="varchar" MaxLength="32" />
+          <Property Name="cash_acc_no" Type="varchar" MaxLength="100" />
+          <Property Name="ar_acc_no" Type="varchar(max)" />
+          <Property Name="ex_acc_no" Type="varchar(max)" />
+          <Property Name="item_name" Type="varchar" MaxLength="150" />
+          <Property Name="kode_gudang" Type="varchar" MaxLength="80" />
+        </EntityType>
+        <EntityType Name="master_list">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="kode_mitra" Type="nvarchar" MaxLength="255" />
+          <Property Name="nama_mitra" Type="nvarchar" MaxLength="255" />
+          <Property Name="ketua_kelompok" Type="nvarchar" MaxLength="255" />
+          <Property Name="nama_kelompok" Type="nvarchar" MaxLength="255" />
+          <Property Name="jenis_mitra" Type="nvarchar" MaxLength="255" />
+          <Property Name="alamat_ktp" Type="nvarchar" MaxLength="255" />
+          <Property Name="no_ktp" Type="nvarchar" MaxLength="255" />
+          <Property Name="no_hp" Type="nvarchar" MaxLength="255" />
+          <Property Name="no_kontrak" Type="nvarchar" MaxLength="255" />
+          <Property Name="tgl_kontrak" Type="datetime" />
+          <Property Name="luas" Type="float" />
+          <Property Name="kategori" Type="nvarchar" MaxLength="255" />
+          <Property Name="varietas" Type="nvarchar" MaxLength="255" />
+          <Property Name="tgl_tanam" Type="datetime" />
+          <Property Name="rayon" Type="nvarchar" MaxLength="255" />
+          <Property Name="penanggung_jawab" Type="nvarchar" MaxLength="255" />
+          <Property Name="koordinat_x" Type="nvarchar" MaxLength="255" />
+          <Property Name="koordinat_y" Type="nvarchar" MaxLength="255" />
+          <Property Name="kelurahan" Type="nvarchar" MaxLength="255" />
+          <Property Name="kecamatan" Type="nvarchar" MaxLength="255" />
+          <Property Name="kabupaten" Type="nvarchar" MaxLength="255" />
+          <Property Name="no_rek" Type="nvarchar" MaxLength="255" />
+          <Property Name="an_rek" Type="nvarchar" MaxLength="255" />
+          <Property Name="bank_rek" Type="nvarchar" MaxLength="255" />
+          <Property Name="kud" Type="nvarchar" MaxLength="255" />
+          <Property Name="tgl_panen" Type="datetime" />
+          <Property Name="est_tch" Type="float" />
+          <Property Name="est_hasil_panen" Type="float" />
+          <Property Name="est_radius" Type="nvarchar" MaxLength="255" />
+          <Property Name="reg_status" Type="bit" />
+          <Property Name="est_ritase" Type="int" />
+          <Property Name="period_trx" Type="nvarchar" MaxLength="10" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Masterlist2">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="kode_mitra" Type="nvarchar" MaxLength="255" />
+          <Property Name="nama_mitra" Type="nvarchar" MaxLength="255" />
+          <Property Name="ketua_kelompok" Type="nvarchar" MaxLength="255" />
+          <Property Name="nama_kelompok" Type="nvarchar" MaxLength="255" />
+          <Property Name="jenis_mitra" Type="nvarchar" MaxLength="255" />
+          <Property Name="alamat_ktp" Type="nvarchar" MaxLength="255" />
+          <Property Name="no_ktp" Type="nvarchar" MaxLength="255" />
+          <Property Name="no_hp" Type="nvarchar" MaxLength="255" />
+          <Property Name="no_kontrak" Type="nvarchar" MaxLength="255" />
+          <Property Name="tgl_kontrak" Type="datetime" />
+          <Property Name="luas" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="kategori" Type="nvarchar" MaxLength="255" />
+          <Property Name="varietas" Type="nvarchar" MaxLength="255" />
+          <Property Name="tgl_tanam" Type="datetime" />
+          <Property Name="rayon" Type="nvarchar" MaxLength="255" />
+          <Property Name="penanggung_jawab" Type="nvarchar" MaxLength="255" />
+          <Property Name="koordinat_x" Type="nvarchar" MaxLength="255" />
+          <Property Name="koordinat_y" Type="nvarchar" MaxLength="255" />
+          <Property Name="kelurahan" Type="nvarchar" MaxLength="255" />
+          <Property Name="kecamatan" Type="nvarchar" MaxLength="255" />
+          <Property Name="kabupaten" Type="nvarchar" MaxLength="255" />
+          <Property Name="no_rek" Type="nvarchar" MaxLength="255" />
+          <Property Name="an_rek" Type="nvarchar" MaxLength="255" />
+          <Property Name="bank_rek" Type="nvarchar" MaxLength="255" />
+          <Property Name="kud" Type="nvarchar" MaxLength="255" />
+          <Property Name="tgl_panen" Type="datetime" />
+          <Property Name="est_tch" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="est_hasil_panen" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="est_radius" Type="nvarchar" MaxLength="25" />
+          <Property Name="reg_status" Type="bit" />
+          <Property Name="est_ritase" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="year_period" Type="int" Nullable="false" />
+          <Property Name="period_trx" Type="nvarchar" MaxLength="10" />
+          <Property Name="id_kptr" Type="int" />
+        </EntityType>
+        <EntityType Name="rendemen">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="rendemen" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="bag_ptr_b" Type="decimal" Precision="18" Scale="4" Nullable="false" />
+        </EntityType>
+        <EntityType Name="shared_core_sampling">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TanggalProses" Type="datetime" Nullable="false" />
+          <Property Name="PlatNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="Driver" Type="nvarchar" MaxLength="255" />
+          <Property Name="NoTTA" Type="nvarchar" MaxLength="255" />
+          <Property Name="Line" Type="int" />
+          <Property Name="POL" Type="float" />
+          <Property Name="BRIX" Type="float" />
+          <Property Name="BARCODE" Type="nvarchar" MaxLength="255" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="shared_timbangan_in">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TanggalProses" Type="datetime" Nullable="false" />
+          <Property Name="PlatNo" Type="nvarchar" MaxLength="255" />
+          <Property Name="Driver" Type="nvarchar" MaxLength="255" />
+          <Property Name="NoTTA" Type="nvarchar" MaxLength="255" />
+          <Property Name="NoTimbangan" Type="int" />
+          <Property Name="BeratKotor" Type="float" />
+          <Property Name="Status" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="tbl_error">
+          <Key>
+            <PropertyRef Name="DocEntry" />
+          </Key>
+          <Property Name="DocEntry" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DeviceType" Type="nvarchar" MaxLength="1" />
+          <Property Name="DeviceLocation" Type="nvarchar" MaxLength="1" />
+          <Property Name="DeviceIPAddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateDate" Type="datetime" />
+          <Property Name="Status" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbl_kabupaten">
+          <Key>
+            <PropertyRef Name="kab_id" />
+          </Key>
+          <Property Name="kab_id" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="kab_name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_kecamatan">
+          <Key>
+            <PropertyRef Name="kab_id" />
+            <PropertyRef Name="kec_id" />
+          </Key>
+          <Property Name="kab_id" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="kec_id" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="kec_name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_kelurahan">
+          <Key>
+            <PropertyRef Name="kel_id" />
+            <PropertyRef Name="kab_id" />
+            <PropertyRef Name="kec_id" />
+          </Key>
+          <Property Name="kel_id" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="kab_id" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="kec_id" Type="varchar" MaxLength="3" Nullable="false" />
+          <Property Name="kel_name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="tbl_pendaftaran_mobil">
+          <Key>
+            <PropertyRef Name="doc_entry" />
+          </Key>
+          <Property Name="doc_entry" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="doc_date" Type="date" />
+          <Property Name="card_code" Type="nvarchar" MaxLength="15" />
+          <Property Name="card_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="card_code_reg" Type="nvarchar" MaxLength="15" />
+          <Property Name="card_name_reg" Type="nvarchar" MaxLength="100" />
+          <Property Name="tta_number" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="tta_date" Type="date" />
+          <Property Name="num_at_card" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="car_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="driver" Type="nvarchar" MaxLength="150" />
+          <Property Name="remark" Type="nvarchar(max)" />
+          <Property Name="ip_address" Type="nvarchar" MaxLength="50" />
+          <Property Name="user_sign" Type="int" />
+          <Property Name="status" Type="int" />
+          <Property Name="create_date" Type="datetime" />
+          <Property Name="create_by" Type="varchar" MaxLength="10" />
+          <Property Name="update_date" Type="datetime" />
+          <Property Name="update_by" Type="varchar" MaxLength="10" />
+          <Property Name="car_type" Type="bit" />
+        </EntityType>
+        <EntityType Name="tbl_periode_giling">
+          <Key>
+            <PropertyRef Name="periode_id" />
+          </Key>
+          <Property Name="periode_id" Type="int" Nullable="false" />
+          <Property Name="begin_date" Type="date" />
+          <Property Name="end_date" Type="date" />
+          <Property Name="date_closed" Type="datetime" />
+          <Property Name="grace_period" Type="smallint" />
+          <Property Name="closed" Type="bit" Nullable="false" />
+          <Property Name="update_by" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="tbl_periode_trx">
+          <Key>
+            <PropertyRef Name="period_trx" />
+          </Key>
+          <Property Name="period_trx" Type="int" Nullable="false" />
+          <Property Name="periode_giling" Type="int" Nullable="false" />
+          <Property Name="begin_date" Type="date" />
+          <Property Name="end_date" Type="date" />
+          <Property Name="periode_id" Type="int" />
+          <Property Name="date_closed" Type="datetime" />
+          <Property Name="grace_period" Type="smallint" />
+          <Property Name="closed" Type="bit" Nullable="false" />
+          <Property Name="update_by" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="tbl_transit_core_sampling">
+          <Key>
+            <PropertyRef Name="doc_entry" />
+            <PropertyRef Name="base_entry" />
+            <PropertyRef Name="num_at_card" />
+          </Key>
+          <Property Name="doc_entry" Type="int" Nullable="false" />
+          <Property Name="base_entry" Type="int" Nullable="false" />
+          <Property Name="num_at_card" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="grkey" Type="varchar" MaxLength="50" />
+          <Property Name="invoicekey" Type="varchar" MaxLength="50" />
+          <Property Name="opaykey" Type="varchar" MaxLength="50" />
+          <Property Name="car_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="driver" Type="nvarchar" MaxLength="150" />
+          <Property Name="device_ip_address" Type="nvarchar" MaxLength="50" />
+          <Property Name="pol_manual" Type="numeric" Precision="19" Scale="6" />
+          <Property Name="brix_manual" Type="numeric" Precision="19" Scale="6" />
+          <Property Name="rendemen_manual" Type="numeric" Precision="19" Scale="6" />
+          <Property Name="pol_nir" Type="numeric" Precision="19" Scale="6" />
+          <Property Name="brix_nir" Type="numeric" Precision="19" Scale="6" />
+          <Property Name="rendemen_nir" Type="numeric" Precision="19" Scale="6" />
+          <Property Name="harga" Type="numeric" Precision="19" Scale="6" />
+          <Property Name="potongan" Type="numeric" Precision="19" Scale="6" />
+          <Property Name="status" Type="int" />
+          <Property Name="id_basket" Type="nvarchar" MaxLength="50" />
+          <Property Name="potongan_date" Type="datetime" />
+          <Property Name="date" Type="date" />
+          <Property Name="time" Type="nvarchar" MaxLength="12" />
+          <Property Name="create_date" Type="datetime" />
+          <Property Name="update_date" Type="datetime" />
+          <Property Name="update_by" Type="varchar" MaxLength="10" />
+          <Property Name="create_by" Type="varchar" MaxLength="10" />
+          <Property Name="house_id" Type="varchar" MaxLength="10" />
+          <Property Name="insentif" Type="numeric" Precision="19" Scale="6" />
+          <Property Name="pembayaran" Type="numeric" Precision="19" Scale="6" />
+          <Property Name="potongan_unreg_petani" Type="numeric" Precision="19" Scale="2" />
+        </EntityType>
+        <EntityType Name="tbl_transit_scan_id_device">
+          <Key>
+            <PropertyRef Name="doc_entry" />
+            <PropertyRef Name="base_entry" />
+            <PropertyRef Name="num_at_card" />
+          </Key>
+          <Property Name="doc_entry" Type="int" Nullable="false" />
+          <Property Name="base_entry" Type="int" Nullable="false" />
+          <Property Name="num_at_card" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="car_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="driver" Type="nvarchar" MaxLength="150" />
+          <Property Name="device_type" Type="nvarchar" MaxLength="1" />
+          <Property Name="device_ip_address" Type="nvarchar" MaxLength="50" />
+          <Property Name="create_date" Type="datetime" />
+          <Property Name="create_by" Type="varchar" MaxLength="10" />
+          <Property Name="update_date" Type="datetime" />
+          <Property Name="update_by" Type="varchar" MaxLength="10" />
+          <Property Name="status" Type="int" />
+        </EntityType>
+        <EntityType Name="tbl_transit_scan_id_timbangan">
+          <Key>
+            <PropertyRef Name="doc_entry" />
+            <PropertyRef Name="base_entry" />
+            <PropertyRef Name="num_at_card" />
+          </Key>
+          <Property Name="doc_entry" Type="int" Nullable="false" />
+          <Property Name="base_entry" Type="int" Nullable="false" />
+          <Property Name="num_at_card" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="car_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="driver" Type="nvarchar" MaxLength="150" />
+          <Property Name="scan_in_ip_address" Type="nvarchar" MaxLength="50" />
+          <Property Name="scan_out_ip_address" Type="nvarchar" MaxLength="50" />
+          <Property Name="date_in" Type="datetime" />
+          <Property Name="date_out" Type="datetime" />
+          <Property Name="status_in" Type="int" />
+          <Property Name="status_out" Type="int" />
+          <Property Name="status_in2" Type="int" />
+          <Property Name="status_out2" Type="int" />
+          <Property Name="create_date" Type="datetime" />
+          <Property Name="create_by" Type="varchar" MaxLength="10" />
+          <Property Name="update_date" Type="datetime" />
+          <Property Name="update_by" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="tbl_transit_timbangan">
+          <Key>
+            <PropertyRef Name="doc_entry" />
+            <PropertyRef Name="base_entry" />
+            <PropertyRef Name="num_at_card" />
+          </Key>
+          <Property Name="doc_entry" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="base_entry" Type="int" Nullable="false" />
+          <Property Name="num_at_card" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="car_id" Type="nvarchar" MaxLength="50" />
+          <Property Name="driver" Type="nvarchar" MaxLength="150" />
+          <Property Name="bridge_in_ip_address" Type="nvarchar" MaxLength="50" />
+          <Property Name="bridge_out_ip_address" Type="nvarchar" MaxLength="50" />
+          <Property Name="gross_weight" Type="numeric" Precision="19" Scale="2" />
+          <Property Name="car_weight" Type="numeric" Precision="19" Scale="2" />
+          <Property Name="net_weight" Type="numeric" Precision="19" Scale="2" />
+          <Property Name="date_in" Type="datetime" />
+          <Property Name="date_out" Type="datetime" />
+          <Property Name="status_in" Type="int" />
+          <Property Name="status_out" Type="int" />
+          <Property Name="status_in2" Type="int" />
+          <Property Name="status_out2" Type="int" />
+          <Property Name="create_date" Type="datetime" />
+          <Property Name="update_date" Type="datetime" />
+          <Property Name="update_by" Type="varchar" MaxLength="10" />
+          <Property Name="create_by" Type="varchar" MaxLength="10" />
+          <Property Name="tiketno" Type="varchar" MaxLength="25" />
+        </EntityType>
+        <EntityType Name="Tiket">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NamaKUD" Type="nvarchar" MaxLength="255" />
+          <Property Name="NoTiket" Type="nvarchar" MaxLength="255" />
+          <Property Name="NamaPetani" Type="nvarchar" MaxLength="255" />
+          <Property Name="NamaPetani2" Type="nvarchar" MaxLength="255" />
+          <Property Name="KodeRegister" Type="nvarchar" MaxLength="255" />
+          <Property Name="KodeRegister2" Type="nvarchar" MaxLength="255" />
+          <Property Name="Alamat" Type="nvarchar" MaxLength="255" />
+          <Property Name="Alamat2" Type="nvarchar" MaxLength="255" />
+          <Property Name="DibuatOleh" Type="nvarchar" MaxLength="255" />
+          <Property Name="DiserahkanOlehJabatan" Type="nvarchar" MaxLength="255" />
+          <Property Name="PenanggungJawab" Type="nvarchar" MaxLength="255" />
+          <Property Name="PenanggungJawabJabatan" Type="nvarchar" MaxLength="255" />
+          <Property Name="Driver" Type="nvarchar" MaxLength="255" />
+          <Property Name="NoTruck" Type="nvarchar" MaxLength="255" />
+          <Property Name="LuasLahan" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="VarietasTebu" Type="nvarchar" MaxLength="255" />
+          <Property Name="LokasiDesa" Type="nvarchar" MaxLength="255" />
+          <Property Name="LokasiKec" Type="nvarchar" MaxLength="255" />
+          <Property Name="LokasiKab" Type="nvarchar" MaxLength="255" />
+          <Property Name="KodeMitra" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="CreateBy" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="CreateTerminal" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="UpdateDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateBy" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="UpdateTerminal" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="tglTTA" Type="datetime" />
+          <Property Name="tglKontrak" Type="datetime" />
+          <Property Name="EstBeratTebu" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="KodeMitra2" Type="nvarchar" MaxLength="200" />
+          <Property Name="kategori" Type="nvarchar" MaxLength="50" />
+          <Property Name="est_tch" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="est_ritase" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="est_hasil_panen" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="est_radius" Type="nvarchar" MaxLength="25" />
+          <Property Name="tgl_panen" Type="date" Nullable="false" />
+          <Property Name="no_kontrak" Type="varchar" MaxLength="50" />
+          <Property Name="est_luas_panen" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="rayon" Type="varchar" MaxLength="10" />
+          <Property Name="id_status" Type="bit" />
+          <Property Name="tiket_master_id" Type="int" />
+        </EntityType>
+        <EntityType Name="tiket_header">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="file_excel" Type="varchar" MaxLength="50" />
+          <Property Name="upload_desc" Type="varchar" MaxLength="50" />
+          <Property Name="upload_status" Type="bit" />
+        </EntityType>
+        <EntityType Name="tiket_history">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NamaKUD" Type="nvarchar" MaxLength="255" />
+          <Property Name="NoTiket" Type="nvarchar" MaxLength="255" />
+          <Property Name="NamaPetani" Type="nvarchar" MaxLength="255" />
+          <Property Name="NamaPetani2" Type="nvarchar" MaxLength="255" />
+          <Property Name="KodeRegister" Type="nvarchar" MaxLength="255" />
+          <Property Name="KodeRegister2" Type="nvarchar" MaxLength="255" />
+          <Property Name="Alamat" Type="nvarchar" MaxLength="255" />
+          <Property Name="Alamat2" Type="nvarchar" MaxLength="255" />
+          <Property Name="DibuatOleh" Type="nvarchar" MaxLength="255" />
+          <Property Name="DiserahkanOlehJabatan" Type="nvarchar" MaxLength="255" />
+          <Property Name="PenanggungJawab" Type="nvarchar" MaxLength="255" />
+          <Property Name="PenanggungJawabJabatan" Type="nvarchar" MaxLength="255" />
+          <Property Name="Driver" Type="nvarchar" MaxLength="255" />
+          <Property Name="NoTruck" Type="nvarchar" MaxLength="255" />
+          <Property Name="LuasLahan" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="VarietasTebu" Type="nvarchar" MaxLength="255" />
+          <Property Name="LokasiDesa" Type="nvarchar" MaxLength="255" />
+          <Property Name="LokasiKec" Type="nvarchar" MaxLength="255" />
+          <Property Name="LokasiKab" Type="nvarchar" MaxLength="255" />
+          <Property Name="KodeMitra" Type="nvarchar" MaxLength="255" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="CreateBy" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="CreateTerminal" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="UpdateDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateBy" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="UpdateTerminal" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="tglTTA" Type="datetime" />
+          <Property Name="tglKontrak" Type="datetime" />
+          <Property Name="EstBeratTebu" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="KodeMitra2" Type="nvarchar" MaxLength="200" />
+          <Property Name="kategori" Type="nvarchar" MaxLength="50" />
+          <Property Name="est_tch" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="est_ritase" Type="int" />
+          <Property Name="est_hasil_panen" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="est_radius" Type="int" />
+          <Property Name="tgl_panen" Type="date" Nullable="false" />
+          <Property Name="no_kontrak" Type="varchar" MaxLength="50" />
+          <Property Name="est_luas_panen" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="rayon" Type="varchar" MaxLength="10" />
+          <Property Name="id_status" Type="bit" />
+          <Property Name="tiket_master_id" Type="int" />
+          <Property Name="id_ref" Type="int" />
+        </EntityType>
+        <EntityType Name="tiket_template">
+          <Key>
+            <PropertyRef Name="NoTiket" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="NoTiket" Type="nvarchar" MaxLength="255" Nullable="false" />
+        </EntityType>
+        <EntityType Name="trans_data_header">
+          <Key>
+            <PropertyRef Name="trans_id" />
+          </Key>
+          <Property Name="trans_id" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="date_trans" Type="datetime" />
+          <Property Name="date_issued" Type="datetime" />
+          <Property Name="partner_id" Type="nvarchar" MaxLength="25" />
+          <Property Name="status" Type="bit" />
+          <Property Name="type_trans" Type="varchar" MaxLength="15" />
+          <Property Name="ref_id" Type="varchar" MaxLength="25" />
+          <Property Name="status_invoice" Type="bit" />
+          <Property Name="validasi" Type="bit" />
+          <Property Name="closed" Type="bit" />
+          <Property Name="periode" Type="int" />
+          <Property Name="year_period" Type="int" Nullable="false" />
+          <Property Name="create_date" Type="datetime" />
+          <Property Name="create_by" Type="varchar" MaxLength="10" />
+          <Property Name="update_date" Type="datetime" />
+          <Property Name="update_by" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="trans_data_line">
+          <Key>
+            <PropertyRef Name="idx" />
+          </Key>
+          <Property Name="idx" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="trans_id" Type="varchar" MaxLength="25" />
+          <Property Name="debet" Type="money" />
+          <Property Name="credit" Type="money" />
+          <Property Name="discount" Type="decimal" Precision="18" Scale="10" />
+          <Property Name="status" Type="bit" />
+          <Property Name="ref_notes" Type="varchar" MaxLength="200" />
+          <Property Name="type_trans" Type="varchar" MaxLength="15" />
+          <Property Name="base_entry" Type="int" />
+          <Property Name="date_issued" Type="datetime" />
+        </EntityType>
+        <EntityType Name="trans_data_saldo">
+          <Key>
+            <PropertyRef Name="partner_id" />
+          </Key>
+          <Property Name="partner_id" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="currentdr0" Type="money" />
+          <Property Name="currentcr0" Type="money" />
+          <Property Name="currentdr1" Type="money" />
+          <Property Name="currentcr1" Type="money" />
+          <Property Name="currentdr2" Type="money" />
+          <Property Name="currentcr2" Type="money" />
+          <Property Name="currentdr3" Type="money" />
+          <Property Name="currentcr3" Type="money" />
+          <Property Name="currentdr4" Type="money" />
+          <Property Name="currentcr4" Type="money" />
+          <Property Name="currentdr5" Type="money" />
+          <Property Name="currentcr5" Type="money" />
+          <Property Name="currentdr6" Type="money" />
+          <Property Name="currentcr6" Type="money" />
+          <Property Name="currentdr7" Type="money" />
+          <Property Name="currentcr7" Type="money" />
+          <Property Name="currentdr8" Type="money" />
+          <Property Name="currentcr8" Type="money" />
+          <Property Name="currentdr9" Type="money" />
+          <Property Name="currentcr9" Type="money" />
+          <Property Name="currentdr10" Type="money" />
+          <Property Name="currentcr10" Type="money" />
+          <Property Name="currentdr11" Type="money" />
+          <Property Name="currentcr11" Type="money" />
+          <Property Name="currentdr12" Type="money" />
+          <Property Name="currentcr12" Type="money" />
+          <Property Name="year_period" Type="int" />
+        </EntityType>
+        <EntityType Name="trans_data_type">
+          <Key>
+            <PropertyRef Name="type_id" />
+          </Key>
+          <Property Name="SeqNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="type_id" Type="varchar" MaxLength="15" Nullable="false" />
+          <Property Name="type_desc" Type="varchar" MaxLength="50" />
+          <Property Name="status" Type="bit" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="Password" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Fullname" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Email" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="CreateDate" Type="datetime" Nullable="false" />
+          <Property Name="CreateBy" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="CreateTerminal" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UpdateDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdateBy" Type="varchar" MaxLength="25" Nullable="false" />
+          <Property Name="UpdateTerminal" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="RoleName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="user_access_list">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="form_id" Type="int" />
+          <Property Name="visible" Type="int" />
+        </EntityType>
+        <EntityType Name="user_master_form">
+          <Key>
+            <PropertyRef Name="form_id" />
+          </Key>
+          <Property Name="timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+          <Property Name="form_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="form_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="form_file_name" Type="nvarchar" MaxLength="100" />
+          <Property Name="setup_series_no" Type="nvarchar" MaxLength="6" />
+        </EntityType>
+        <EntityType Name="user_master_menu">
+          <Key>
+            <PropertyRef Name="menu_id" />
+          </Key>
+          <Property Name="timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+          <Property Name="menu_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="varchar" MaxLength="50" />
+          <Property Name="caption" Type="varchar" MaxLength="100" />
+          <Property Name="form_id" Type="int" />
+          <Property Name="seq_level" Type="tinyint" />
+          <Property Name="menu_run" Type="tinyint" />
+          <Property Name="parent" Type="int" />
+          <Property Name="popup_menu" Type="bit" />
+          <Property Name="module_id" Type="int" />
+          <Property Name="run_script" Type="text" />
+          <Property Name="seq_order" Type="tinyint" />
+          <Property Name="history_form" Type="varchar" MaxLength="50" />
+          <Property Name="history_view" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="user_master_modules">
+          <Key>
+            <PropertyRef Name="module_id" />
+          </Key>
+          <Property Name="timestamp" Type="timestamp" StoreGeneratedPattern="Computed" />
+          <Property Name="module_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="module_desc" Type="nvarchar" MaxLength="30" />
+          <Property Name="seq_no" Type="tinyint" />
+        </EntityType>
+        <EntityType Name="user_table">
+          <Key>
+            <PropertyRef Name="User ID" />
+          </Key>
+          <Property Name="User ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="User Name" Type="nvarchar" MaxLength="25" />
+          <Property Name="EmpID" Type="nvarchar" MaxLength="15" />
+          <Property Name="Group User" Type="int" />
+          <Property Name="dept" Type="varchar" MaxLength="5" />
+          <Property Name="password" Type="varchar" MaxLength="50" />
+          <Property Name="employee" Type="varchar" MaxLength="50" />
+          <Property Name="Name_dept" Type="nvarchar" MaxLength="25" />
+          <Property Name="closing_status" Type="bit" />
+          <Property Name="login_status" Type="bit" />
+          <Property Name="sql_user" Type="bit" />
+        </EntityType>
+        <EntityType Name="user_table_group">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Group Name" Type="nvarchar" MaxLength="30" />
+          <Property Name="default_delete" Type="bit" />
+          <Property Name="sql_user" Type="varchar" MaxLength="12" />
+          <Property Name="sql_password" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Detail TransData_transdata">
+          <End Role="trans_data_header" Type="Self.trans_data_header" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="trans_data_line" Type="Self.trans_data_line" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="trans_data_header">
+              <PropertyRef Name="trans_id" />
+            </Principal>
+            <Dependent Role="trans_data_line">
+              <PropertyRef Name="trans_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_lookup_line_lookup_header">
+          <End Role="lookup_header" Type="Self.lookup_header" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="lookup_line" Type="Self.lookup_line" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lookup_header">
+              <PropertyRef Name="header_id" />
+            </Principal>
+            <Dependent Role="lookup_line">
+              <PropertyRef Name="header_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_kecamatan_tbl_kabupaten">
+          <End Role="tbl_kabupaten" Type="Self.tbl_kabupaten" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_kecamatan" Type="Self.tbl_kecamatan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_kabupaten">
+              <PropertyRef Name="kab_id" />
+            </Principal>
+            <Dependent Role="tbl_kecamatan">
+              <PropertyRef Name="kab_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_kelurahan_tbl_kecamatan">
+          <End Role="tbl_kecamatan" Type="Self.tbl_kecamatan" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_kelurahan" Type="Self.tbl_kelurahan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_kecamatan">
+              <PropertyRef Name="kab_id" />
+              <PropertyRef Name="kec_id" />
+            </Principal>
+            <Dependent Role="tbl_kelurahan">
+              <PropertyRef Name="kab_id" />
+              <PropertyRef Name="kec_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_transit_core_sampling_tbl_pendaftaran_mobil">
+          <End Role="tbl_pendaftaran_mobil" Type="Self.tbl_pendaftaran_mobil" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_transit_core_sampling" Type="Self.tbl_transit_core_sampling" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_pendaftaran_mobil">
+              <PropertyRef Name="doc_entry" />
+            </Principal>
+            <Dependent Role="tbl_transit_core_sampling">
+              <PropertyRef Name="base_entry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_transit_scan_id_device_tbl_pendaftaran_mobil">
+          <End Role="tbl_pendaftaran_mobil" Type="Self.tbl_pendaftaran_mobil" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_transit_scan_id_device" Type="Self.tbl_transit_scan_id_device" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_pendaftaran_mobil">
+              <PropertyRef Name="doc_entry" />
+            </Principal>
+            <Dependent Role="tbl_transit_scan_id_device">
+              <PropertyRef Name="base_entry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_transit_scan_id_timbangan_tbl_pendaftaran_mobil">
+          <End Role="tbl_pendaftaran_mobil" Type="Self.tbl_pendaftaran_mobil" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_transit_scan_id_timbangan" Type="Self.tbl_transit_scan_id_timbangan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_pendaftaran_mobil">
+              <PropertyRef Name="doc_entry" />
+            </Principal>
+            <Dependent Role="tbl_transit_scan_id_timbangan">
+              <PropertyRef Name="base_entry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_transit_timbangan_tbl_pendaftaran_mobil">
+          <End Role="tbl_pendaftaran_mobil" Type="Self.tbl_pendaftaran_mobil" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="tbl_transit_timbangan" Type="Self.tbl_transit_timbangan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_pendaftaran_mobil">
+              <PropertyRef Name="doc_entry" />
+            </Principal>
+            <Dependent Role="tbl_transit_timbangan">
+              <PropertyRef Name="base_entry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_trans_data_header_trans_data_type">
+          <End Role="trans_data_type" Type="Self.trans_data_type" Multiplicity="0..1" />
+          <End Role="trans_data_header" Type="Self.trans_data_header" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="trans_data_type">
+              <PropertyRef Name="type_id" />
+            </Principal>
+            <Dependent Role="trans_data_header">
+              <PropertyRef Name="type_trans" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User Table_User_table_group">
+          <End Role="user_table_group" Type="Self.user_table_group" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="user_table" Type="Self.user_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_table_group">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_table">
+              <PropertyRef Name="Group User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_master_menu_user_master_form">
+          <End Role="user_master_form" Type="Self.user_master_form" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="user_master_menu" Type="Self.user_master_menu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_master_form">
+              <PropertyRef Name="form_id" />
+            </Principal>
+            <Dependent Role="user_master_menu">
+              <PropertyRef Name="form_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_master_menu_user_master_modules">
+          <End Role="user_master_modules" Type="Self.user_master_modules" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="user_master_menu" Type="Self.user_master_menu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_master_modules">
+              <PropertyRef Name="module_id" />
+            </Principal>
+            <Dependent Role="user_master_menu">
+              <PropertyRef Name="module_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="trans_data_line_fk">
+          <End Role="trans_data_type" Type="Self.trans_data_type" Multiplicity="0..1" />
+          <End Role="trans_data_line" Type="Self.trans_data_line" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="trans_data_type">
+              <PropertyRef Name="type_id" />
+            </Principal>
+            <Dependent Role="trans_data_line">
+              <PropertyRef Name="type_trans" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="spInsertTrans" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="jenis_transaksi" Type="varchar" Mode="In" />
+          <Parameter Name="partner_id" Type="varchar" Mode="In" />
+          <Parameter Name="date_issued" Type="datetime" Mode="In" />
+          <Parameter Name="ref_notes" Type="varchar" Mode="In" />
+          <Parameter Name="year_period" Type="int" Mode="In" />
+          <Parameter Name="create_by" Type="varchar" Mode="In" />
+          <Parameter Name="jmlbayar" Type="money" Mode="In" />
+          <Parameter Name="base_entry" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="spLoadBayarAll" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spLoadCicilan" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <EntityContainer Name="SRSModelStoreContainer">
+          <EntitySet Name="device_config" EntityType="Self.device_config" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="lookup_header" EntityType="Self.lookup_header" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="lookup_line" EntityType="Self.lookup_line" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="m_conf_acc" EntityType="Self.m_conf_acc" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="master_list" EntityType="Self.master_list" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Masterlist2" EntityType="Self.Masterlist2" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="rendemen" EntityType="Self.rendemen" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="shared_core_sampling" EntityType="Self.shared_core_sampling" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="shared_timbangan_in" EntityType="Self.shared_timbangan_in" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_error" EntityType="Self.tbl_error" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_kabupaten" EntityType="Self.tbl_kabupaten" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_kecamatan" EntityType="Self.tbl_kecamatan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_kelurahan" EntityType="Self.tbl_kelurahan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_pendaftaran_mobil" EntityType="Self.tbl_pendaftaran_mobil" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_periode_giling" EntityType="Self.tbl_periode_giling" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_periode_trx" EntityType="Self.tbl_periode_trx" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_transit_core_sampling" EntityType="Self.tbl_transit_core_sampling" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_transit_scan_id_device" EntityType="Self.tbl_transit_scan_id_device" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_transit_scan_id_timbangan" EntityType="Self.tbl_transit_scan_id_timbangan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tbl_transit_timbangan" EntityType="Self.tbl_transit_timbangan" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tiket" EntityType="Self.Tiket" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tiket_header" EntityType="Self.tiket_header" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tiket_history" EntityType="Self.tiket_history" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tiket_template" EntityType="Self.tiket_template" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="trans_data_header" EntityType="Self.trans_data_header" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="trans_data_line" EntityType="Self.trans_data_line" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="trans_data_saldo" EntityType="Self.trans_data_saldo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="trans_data_type" EntityType="Self.trans_data_type" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="user_access_list" EntityType="Self.user_access_list" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="user_master_form" EntityType="Self.user_master_form" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="user_master_menu" EntityType="Self.user_master_menu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="user_master_modules" EntityType="Self.user_master_modules" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="user_table" EntityType="Self.user_table" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="user_table_group" EntityType="Self.user_table_group" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Detail TransData_transdata" Association="Self.FK_Detail TransData_transdata">
+            <End Role="trans_data_header" EntitySet="trans_data_header" />
+            <End Role="trans_data_line" EntitySet="trans_data_line" />
+          </AssociationSet>
+          <AssociationSet Name="FK_lookup_line_lookup_header" Association="Self.FK_lookup_line_lookup_header">
+            <End Role="lookup_header" EntitySet="lookup_header" />
+            <End Role="lookup_line" EntitySet="lookup_line" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_kecamatan_tbl_kabupaten" Association="Self.FK_tbl_kecamatan_tbl_kabupaten">
+            <End Role="tbl_kabupaten" EntitySet="tbl_kabupaten" />
+            <End Role="tbl_kecamatan" EntitySet="tbl_kecamatan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_kelurahan_tbl_kecamatan" Association="Self.FK_tbl_kelurahan_tbl_kecamatan">
+            <End Role="tbl_kecamatan" EntitySet="tbl_kecamatan" />
+            <End Role="tbl_kelurahan" EntitySet="tbl_kelurahan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_transit_core_sampling_tbl_pendaftaran_mobil" Association="Self.FK_tbl_transit_core_sampling_tbl_pendaftaran_mobil">
+            <End Role="tbl_pendaftaran_mobil" EntitySet="tbl_pendaftaran_mobil" />
+            <End Role="tbl_transit_core_sampling" EntitySet="tbl_transit_core_sampling" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_transit_scan_id_device_tbl_pendaftaran_mobil" Association="Self.FK_tbl_transit_scan_id_device_tbl_pendaftaran_mobil">
+            <End Role="tbl_pendaftaran_mobil" EntitySet="tbl_pendaftaran_mobil" />
+            <End Role="tbl_transit_scan_id_device" EntitySet="tbl_transit_scan_id_device" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_transit_scan_id_timbangan_tbl_pendaftaran_mobil" Association="Self.FK_tbl_transit_scan_id_timbangan_tbl_pendaftaran_mobil">
+            <End Role="tbl_pendaftaran_mobil" EntitySet="tbl_pendaftaran_mobil" />
+            <End Role="tbl_transit_scan_id_timbangan" EntitySet="tbl_transit_scan_id_timbangan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_transit_timbangan_tbl_pendaftaran_mobil" Association="Self.FK_tbl_transit_timbangan_tbl_pendaftaran_mobil">
+            <End Role="tbl_pendaftaran_mobil" EntitySet="tbl_pendaftaran_mobil" />
+            <End Role="tbl_transit_timbangan" EntitySet="tbl_transit_timbangan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trans_data_header_trans_data_type" Association="Self.FK_trans_data_header_trans_data_type">
+            <End Role="trans_data_type" EntitySet="trans_data_type" />
+            <End Role="trans_data_header" EntitySet="trans_data_header" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User Table_User_table_group" Association="Self.FK_User Table_User_table_group">
+            <End Role="user_table_group" EntitySet="user_table_group" />
+            <End Role="user_table" EntitySet="user_table" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_master_menu_user_master_form" Association="Self.FK_user_master_menu_user_master_form">
+            <End Role="user_master_form" EntitySet="user_master_form" />
+            <End Role="user_master_menu" EntitySet="user_master_menu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_master_menu_user_master_modules" Association="Self.FK_user_master_menu_user_master_modules">
+            <End Role="user_master_modules" EntitySet="user_master_modules" />
+            <End Role="user_master_menu" EntitySet="user_master_menu" />
+          </AssociationSet>
+          <AssociationSet Name="trans_data_line_fk" Association="Self.trans_data_line_fk">
+            <End Role="trans_data_type" EntitySet="trans_data_type" />
+            <End Role="trans_data_line" EntitySet="trans_data_line" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SRSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Fullname" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Email" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreateBy" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreateTerminal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UpdateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateBy" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UpdateTerminal" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SRSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Users" EntityType="Self.User" />
+          <EntitySet Name="tbl_transit_scan_id_device" EntityType="SRSModel.tbl_transit_scan_id_device" />
+          <EntitySet Name="tbl_transit_scan_id_timbangan" EntityType="SRSModel.tbl_transit_scan_id_timbangan" />
+          <EntitySet Name="tbl_transit_timbangan" EntityType="SRSModel.tbl_transit_timbangan" />
+          <EntitySet Name="shared_timbangan_in" EntityType="SRSModel.shared_timbangan_in" />
+          <EntitySet Name="shared_core_sampling" EntityType="SRSModel.shared_core_sampling" />
+          <EntitySet Name="device_config" EntityType="SRSModel.device_config" />
+          <EntitySet Name="lookup_header" EntityType="SRSModel.lookup_header" />
+          <EntitySet Name="lookup_line" EntityType="SRSModel.lookup_line" />
+          <EntitySet Name="user_master_form" EntityType="SRSModel.user_master_form" />
+          <EntitySet Name="user_master_menu" EntityType="SRSModel.user_master_menu" />
+          <EntitySet Name="user_master_modules" EntityType="SRSModel.user_master_modules" />
+          <EntitySet Name="user_table" EntityType="SRSModel.user_table" />
+          <EntitySet Name="user_table_group" EntityType="SRSModel.user_table_group" />
+          <AssociationSet Name="FK_lookup_line_lookup_header" Association="SRSModel.FK_lookup_line_lookup_header">
+            <End Role="lookup_header" EntitySet="lookup_header" />
+            <End Role="lookup_line" EntitySet="lookup_line" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_master_menu_user_master_form" Association="SRSModel.FK_user_master_menu_user_master_form">
+            <End Role="user_master_form" EntitySet="user_master_form" />
+            <End Role="user_master_menu" EntitySet="user_master_menu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_user_master_menu_user_master_modules" Association="SRSModel.FK_user_master_menu_user_master_modules">
+            <End Role="user_master_modules" EntitySet="user_master_modules" />
+            <End Role="user_master_menu" EntitySet="user_master_menu" />
+          </AssociationSet>
+          <AssociationSet Name="FK_User_Table_User_table_group" Association="SRSModel.FK_User_Table_User_table_group">
+            <End Role="user_table_group" EntitySet="user_table_group" />
+            <End Role="user_table" EntitySet="user_table" />
+          </AssociationSet>
+          <EntitySet Name="user_access_list" EntityType="SRSModel.user_access_list" />
+          <EntitySet Name="tbl_kabupaten" EntityType="SRSModel.tbl_kabupaten" />
+          <EntitySet Name="tbl_kecamatan" EntityType="SRSModel.tbl_kecamatan" />
+          <EntitySet Name="tbl_kelurahan" EntityType="SRSModel.tbl_kelurahan" />
+          <AssociationSet Name="FK_tbl_kecamatan_tbl_kabupaten" Association="SRSModel.FK_tbl_kecamatan_tbl_kabupaten">
+            <End Role="tbl_kabupaten" EntitySet="tbl_kabupaten" />
+            <End Role="tbl_kecamatan" EntitySet="tbl_kecamatan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_kelurahan_tbl_kecamatan" Association="SRSModel.FK_tbl_kelurahan_tbl_kecamatan">
+            <End Role="tbl_kecamatan" EntitySet="tbl_kecamatan" />
+            <End Role="tbl_kelurahan" EntitySet="tbl_kelurahan" />
+          </AssociationSet>
+          <EntitySet Name="tiket_header" EntityType="SRSModel.tiket_header" />
+          <EntitySet Name="tiket_template" EntityType="SRSModel.tiket_template" />
+          <EntitySet Name="trans_data_saldo" EntityType="SRSModel.trans_data_saldo" />
+          <EntitySet Name="tbl_pendaftaran_mobil" EntityType="SRSModel.tbl_pendaftaran_mobil" />
+          <AssociationSet Name="FK_tbl_transit_scan_id_device_tbl_pendaftaran_mobil" Association="SRSModel.FK_tbl_transit_scan_id_device_tbl_pendaftaran_mobil">
+            <End Role="tbl_pendaftaran_mobil" EntitySet="tbl_pendaftaran_mobil" />
+            <End Role="tbl_transit_scan_id_device" EntitySet="tbl_transit_scan_id_device" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_transit_scan_id_timbangan_tbl_pendaftaran_mobil" Association="SRSModel.FK_tbl_transit_scan_id_timbangan_tbl_pendaftaran_mobil">
+            <End Role="tbl_pendaftaran_mobil" EntitySet="tbl_pendaftaran_mobil" />
+            <End Role="tbl_transit_scan_id_timbangan" EntitySet="tbl_transit_scan_id_timbangan" />
+          </AssociationSet>
+          <AssociationSet Name="FK_tbl_transit_timbangan_tbl_pendaftaran_mobil" Association="SRSModel.FK_tbl_transit_timbangan_tbl_pendaftaran_mobil">
+            <End Role="tbl_pendaftaran_mobil" EntitySet="tbl_pendaftaran_mobil" />
+            <End Role="tbl_transit_timbangan" EntitySet="tbl_transit_timbangan" />
+          </AssociationSet>
+          <EntitySet Name="tbl_periode_giling" EntityType="SRSModel.tbl_periode_giling" />
+          <EntitySet Name="tbl_periode_trx" EntityType="SRSModel.tbl_periode_trx" />
+          <EntitySet Name="tbl_transit_core_sampling" EntityType="SRSModel.tbl_transit_core_sampling" />
+          <AssociationSet Name="FK_tbl_transit_core_sampling_tbl_pendaftaran_mobil" Association="SRSModel.FK_tbl_transit_core_sampling_tbl_pendaftaran_mobil">
+            <End Role="tbl_pendaftaran_mobil" EntitySet="tbl_pendaftaran_mobil" />
+            <End Role="tbl_transit_core_sampling" EntitySet="tbl_transit_core_sampling" />
+          </AssociationSet>
+          <EntitySet Name="rendemen" EntityType="SRSModel.rendeman" />
+          <EntitySet Name="master_list" EntityType="SRSModel.master_list" />
+          <EntitySet Name="Masterlist2" EntityType="SRSModel.Masterlist2" />
+          <EntitySet Name="Tikets" EntityType="SRSModel.Tiket" />
+          <EntitySet Name="tiket_history" EntityType="SRSModel.tiket_history" />
+          <EntitySet Name="tbl_error" EntityType="SRSModel.tbl_error" />
+          <EntitySet Name="trans_data_header" EntityType="SRSModel.trans_data_header" />
+          <EntitySet Name="trans_data_line" EntityType="SRSModel.trans_data_line" />
+          <EntitySet Name="trans_data_type" EntityType="SRSModel.trans_data_type" />
+          <AssociationSet Name="FK_Detail_TransData_transdata" Association="SRSModel.FK_Detail_TransData_transdata">
+            <End Role="trans_data_header" EntitySet="trans_data_header" />
+            <End Role="trans_data_line" EntitySet="trans_data_line" />
+          </AssociationSet>
+          <AssociationSet Name="FK_trans_data_line_trans_data_type" Association="SRSModel.FK_trans_data_line_trans_data_type">
+            <End Role="trans_data_type" EntitySet="trans_data_type" />
+            <End Role="trans_data_line" EntitySet="trans_data_line" />
+          </AssociationSet>
+          <FunctionImport Name="spInsertTrans">
+            <Parameter Name="jenis_transaksi" Mode="In" Type="String" />
+            <Parameter Name="partner_id" Mode="In" Type="String" />
+            <Parameter Name="date_issued" Mode="In" Type="DateTime" />
+            <Parameter Name="ref_notes" Mode="In" Type="String" />
+            <Parameter Name="year_period" Mode="In" Type="Int32" />
+            <Parameter Name="create_by" Mode="In" Type="String" />
+            <Parameter Name="jmlbayar" Mode="In" Type="Decimal" />
+            <Parameter Name="base_entry" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spLoadCicilan" ReturnType="Collection(SRSModel.spLoadCicilan_Result)" />
+          <EntitySet Name="m_conf_acc" EntityType="SRSModel.m_conf_acc" />
+          <FunctionImport Name="CariNamaPetani" ReturnType="Collection(SRSModel.CariNamaPetani_Result)">
+          <Parameter Name="petani" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spLoadBayarAll" ReturnType="Collection(SRSModel.spLoadBayarAll_Result)" />
+          <FunctionImport Name="spLoadBayarMitra" ReturnType="Collection(SRSModel.spLoadBayarMitra_Result)" />
+          <AssociationSet Name="FK_trans_data_header_trans_data_type" Association="SRSModel.FK_trans_data_header_trans_data_type">
+            <End Role="trans_data_type" EntitySet="trans_data_type" />
+            <End Role="trans_data_header" EntitySet="trans_data_header" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tbl_transit_scan_id_device">
+          <Key>
+            <PropertyRef Name="doc_entry" />
+            <PropertyRef Name="base_entry" />
+            <PropertyRef Name="num_at_card" />
+          </Key>
+          <Property Name="doc_entry" Type="Int32" Nullable="false" />
+          <Property Name="base_entry" Type="Int32" Nullable="false" />
+          <Property Name="num_at_card" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="car_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="driver" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="device_type" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="device_ip_address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="create_date" Type="DateTime" Precision="3" />
+          <Property Name="create_by" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="update_date" Type="DateTime" Precision="3" />
+          <Property Name="update_by" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_pendaftaran_mobil" Relationship="SRSModel.FK_tbl_transit_scan_id_device_tbl_pendaftaran_mobil" FromRole="tbl_transit_scan_id_device" ToRole="tbl_pendaftaran_mobil" />
+        </EntityType>
+        <EntityType Name="tbl_transit_scan_id_timbangan">
+          <Key>
+            <PropertyRef Name="doc_entry" />
+            <PropertyRef Name="base_entry" />
+            <PropertyRef Name="num_at_card" />
+          </Key>
+          <Property Name="doc_entry" Type="Int32" Nullable="false" />
+          <Property Name="base_entry" Type="Int32" Nullable="false" />
+          <Property Name="num_at_card" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="car_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="driver" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="scan_in_ip_address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="scan_out_ip_address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="date_in" Type="DateTime" Precision="3" />
+          <Property Name="status_in" Type="Int32" />
+          <Property Name="status_out" Type="Int32" />
+          <Property Name="create_date" Type="DateTime" Precision="3" />
+          <Property Name="create_by" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="update_date" Type="DateTime" Precision="3" />
+          <Property Name="update_by" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="status_in2" Type="Int32" />
+          <Property Name="status_out2" Type="Int32" />
+          <NavigationProperty Name="tbl_pendaftaran_mobil" Relationship="SRSModel.FK_tbl_transit_scan_id_timbangan_tbl_pendaftaran_mobil" FromRole="tbl_transit_scan_id_timbangan" ToRole="tbl_pendaftaran_mobil" />
+        </EntityType>
+        <EntityType Name="tbl_transit_timbangan">
+          <Key>
+            <PropertyRef Name="doc_entry" />
+            <PropertyRef Name="base_entry" />
+            <PropertyRef Name="num_at_card" />
+          </Key>
+          <Property Name="doc_entry" Type="Int32" Nullable="false" />
+          <Property Name="base_entry" Type="Int32" Nullable="false" />
+          <Property Name="num_at_card" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="car_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="driver" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="bridge_in_ip_address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="bridge_out_ip_address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="gross_weight" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="car_weight" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="net_weight" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="date_in" Type="DateTime" Precision="3" />
+          <Property Name="date_out" Type="DateTime" Precision="3" />
+          <Property Name="status_in" Type="Int32" />
+          <Property Name="status_out" Type="Int32" />
+          <Property Name="create_date" Type="DateTime" Precision="3" />
+          <Property Name="update_date" Type="DateTime" Precision="3" />
+          <Property Name="update_by" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="create_by" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="status_in2" Type="Int32" />
+          <Property Name="status_out2" Type="Int32" />
+          <Property Name="tiketno" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_pendaftaran_mobil" Relationship="SRSModel.FK_tbl_transit_timbangan_tbl_pendaftaran_mobil" FromRole="tbl_transit_timbangan" ToRole="tbl_pendaftaran_mobil" />
+        </EntityType>
+        <EntityType Name="shared_timbangan_in">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TanggalProses" Type="DateTime" Precision="3" Nullable="false" />
+          <Property Name="PlatNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Driver" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NoTTA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NoTimbangan" Type="Int32" />
+          <Property Name="BeratKotor" Type="Double" />
+          <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="shared_core_sampling">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TanggalProses" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="PlatNo" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Driver" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NoTTA" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Line" Type="Int32" />
+          <Property Name="POL" Type="Double" />
+          <Property Name="BRIX" Type="Double" />
+          <Property Name="BARCODE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="device_config">
+          <Key>
+            <PropertyRef Name="device_id" />
+          </Key>
+          <Property Name="device_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="device_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="device_ip" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="location" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="create_date" Type="DateTime" Precision="3" />
+          <Property Name="create_by" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="update_date" Type="DateTime" Precision="3" />
+          <Property Name="update_by" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="id" Type="Int32" />
+          <Property Name="username" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="type_id" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="fld_data_nir" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="fld_data_manual" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ip_nir" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="folder_nir" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="print_max_count" Type="Int32" />
+          <Property Name="print_counter" Type="Int32" />
+        </EntityType>
+        <EntityType Name="lookup_header">
+          <Key>
+            <PropertyRef Name="header_id" />
+          </Key>
+          <Property Name="header_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="header_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="created_by" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="created_date" Type="DateTime" Precision="3" />
+          <Property Name="update_by" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="update_date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="lookup_line" Relationship="SRSModel.FK_lookup_line_lookup_header" FromRole="lookup_header" ToRole="lookup_line" />
+        </EntityType>
+        <EntityType Name="lookup_line">
+          <Key>
+            <PropertyRef Name="line_id" />
+          </Key>
+          <Property Name="line_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="header_id" Type="Int32" />
+          <Property Name="line_code" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="line_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="created_by" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="created_date" Type="DateTime" Precision="3" />
+          <Property Name="update_by" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="update_date" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="lookup_header" Relationship="SRSModel.FK_lookup_line_lookup_header" FromRole="lookup_line" ToRole="lookup_header" />
+        </EntityType>
+        <EntityType Name="user_master_form">
+          <Key>
+            <PropertyRef Name="form_id" />
+          </Key>
+          <Property Name="timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="form_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="form_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="form_file_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="setup_series_no" Type="String" MaxLength="6" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="user_master_menu" Relationship="SRSModel.FK_user_master_menu_user_master_form" FromRole="user_master_form" ToRole="user_master_menu" />
+        </EntityType>
+        <EntityType Name="user_master_menu">
+          <Key>
+            <PropertyRef Name="menu_id" />
+          </Key>
+          <Property Name="timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="menu_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="caption" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="form_id" Type="Int32" />
+          <Property Name="seq_level" Type="Byte" />
+          <Property Name="menu_run" Type="Byte" />
+          <Property Name="parent" Type="Int32" />
+          <Property Name="popup_menu" Type="Boolean" />
+          <Property Name="module_id" Type="Int32" />
+          <Property Name="run_script" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="seq_order" Type="Byte" />
+          <Property Name="history_form" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="history_view" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="user_master_form" Relationship="SRSModel.FK_user_master_menu_user_master_form" FromRole="user_master_menu" ToRole="user_master_form" />
+          <NavigationProperty Name="user_master_modules" Relationship="SRSModel.FK_user_master_menu_user_master_modules" FromRole="user_master_menu" ToRole="user_master_modules" />
+        </EntityType>
+        <EntityType Name="user_master_modules">
+          <Key>
+            <PropertyRef Name="module_id" />
+          </Key>
+          <Property Name="timestamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="module_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="module_desc" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="seq_no" Type="Byte" />
+          <NavigationProperty Name="user_master_menu" Relationship="SRSModel.FK_user_master_menu_user_master_modules" FromRole="user_master_modules" ToRole="user_master_menu" />
+        </EntityType>
+        <EntityType Name="user_table">
+          <Key>
+            <PropertyRef Name="User_ID" />
+          </Key>
+          <Property Name="User_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="User_Name" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="EmpID" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Group_User" Type="Int32" />
+          <Property Name="dept" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="employee" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Name_dept" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="closing_status" Type="Boolean" />
+          <Property Name="login_status" Type="Boolean" />
+          <Property Name="sql_user" Type="Boolean" />
+          <NavigationProperty Name="user_table_group" Relationship="SRSModel.FK_User_Table_User_table_group" FromRole="user_table" ToRole="user_table_group" />
+        </EntityType>
+        <EntityType Name="user_table_group">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Group_Name" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="default_delete" Type="Boolean" />
+          <Property Name="sql_user" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Name="sql_password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="user_table" Relationship="SRSModel.FK_User_Table_User_table_group" FromRole="user_table_group" ToRole="user_table" />
+        </EntityType>
+        <Association Name="FK_lookup_line_lookup_header">
+          <End Type="SRSModel.lookup_header" Role="lookup_header" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SRSModel.lookup_line" Role="lookup_line" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="lookup_header">
+              <PropertyRef Name="header_id" />
+            </Principal>
+            <Dependent Role="lookup_line">
+              <PropertyRef Name="header_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_master_menu_user_master_form">
+          <End Type="SRSModel.user_master_form" Role="user_master_form" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SRSModel.user_master_menu" Role="user_master_menu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_master_form">
+              <PropertyRef Name="form_id" />
+            </Principal>
+            <Dependent Role="user_master_menu">
+              <PropertyRef Name="form_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_user_master_menu_user_master_modules">
+          <End Type="SRSModel.user_master_modules" Role="user_master_modules" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SRSModel.user_master_menu" Role="user_master_menu" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_master_modules">
+              <PropertyRef Name="module_id" />
+            </Principal>
+            <Dependent Role="user_master_menu">
+              <PropertyRef Name="module_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_User_Table_User_table_group">
+          <End Type="SRSModel.user_table_group" Role="user_table_group" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SRSModel.user_table" Role="user_table" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="user_table_group">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="user_table">
+              <PropertyRef Name="Group_User" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="user_access_list">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="form_id" Type="Int32" />
+          <Property Name="visible" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_kabupaten">
+          <Key>
+            <PropertyRef Name="kab_id" />
+          </Key>
+          <Property Name="kab_id" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="kab_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_kecamatan" Relationship="SRSModel.FK_tbl_kecamatan_tbl_kabupaten" FromRole="tbl_kabupaten" ToRole="tbl_kecamatan" />
+        </EntityType>
+        <EntityType Name="tbl_kecamatan">
+          <Key>
+            <PropertyRef Name="kab_id" />
+            <PropertyRef Name="kec_id" />
+          </Key>
+          <Property Name="kab_id" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="kec_id" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="kec_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_kabupaten" Relationship="SRSModel.FK_tbl_kecamatan_tbl_kabupaten" FromRole="tbl_kecamatan" ToRole="tbl_kabupaten" />
+          <NavigationProperty Name="tbl_kelurahan" Relationship="SRSModel.FK_tbl_kelurahan_tbl_kecamatan" FromRole="tbl_kecamatan" ToRole="tbl_kelurahan" />
+        </EntityType>
+        <EntityType Name="tbl_kelurahan">
+          <Key>
+            <PropertyRef Name="kel_id" />
+            <PropertyRef Name="kab_id" />
+            <PropertyRef Name="kec_id" />
+          </Key>
+          <Property Name="kel_id" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="kab_id" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="kec_id" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="kel_name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tbl_kecamatan" Relationship="SRSModel.FK_tbl_kelurahan_tbl_kecamatan" FromRole="tbl_kelurahan" ToRole="tbl_kecamatan" />
+        </EntityType>
+        <Association Name="FK_tbl_kecamatan_tbl_kabupaten">
+          <End Type="SRSModel.tbl_kabupaten" Role="tbl_kabupaten" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SRSModel.tbl_kecamatan" Role="tbl_kecamatan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_kabupaten">
+              <PropertyRef Name="kab_id" />
+            </Principal>
+            <Dependent Role="tbl_kecamatan">
+              <PropertyRef Name="kab_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_kelurahan_tbl_kecamatan">
+          <End Type="SRSModel.tbl_kecamatan" Role="tbl_kecamatan" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SRSModel.tbl_kelurahan" Role="tbl_kelurahan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_kecamatan">
+              <PropertyRef Name="kab_id" />
+              <PropertyRef Name="kec_id" />
+            </Principal>
+            <Dependent Role="tbl_kelurahan">
+              <PropertyRef Name="kab_id" />
+              <PropertyRef Name="kec_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tiket_header">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="file_excel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="upload_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="upload_status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="tiket_template">
+          <Key>
+            <PropertyRef Name="NoTiket" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="NoTiket" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="trans_data_saldo">
+          <Key>
+            <PropertyRef Name="partner_id" />
+          </Key>
+          <Property Name="partner_id" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="currentdr0" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="currentcr0" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="currentdr1" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="currentcr1" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="currentdr2" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="currentcr2" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="currentdr3" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="currentcr3" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="currentdr4" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="currentcr4" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="currentdr5" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="currentcr5" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="currentdr6" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="currentcr6" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="currentdr7" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="currentcr7" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="currentdr8" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="currentcr8" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="currentdr9" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="currentcr9" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="currentdr10" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="currentcr10" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="currentdr11" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="currentcr11" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="currentdr12" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="currentcr12" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="year_period" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_pendaftaran_mobil">
+          <Key>
+            <PropertyRef Name="doc_entry" />
+          </Key>
+          <Property Name="doc_entry" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="doc_date" Type="DateTime" Precision="0" />
+          <Property Name="card_code" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="card_name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="card_code_reg" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="card_name_reg" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="tta_number" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="tta_date" Type="DateTime" Precision="0" />
+          <Property Name="num_at_card" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="car_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="driver" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="remark" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ip_address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="user_sign" Type="Int32" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="create_date" Type="DateTime" Precision="3" />
+          <Property Name="create_by" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="update_date" Type="DateTime" Precision="3" />
+          <Property Name="update_by" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="car_type" Type="Boolean" />
+          <NavigationProperty Name="tbl_transit_scan_id_device" Relationship="SRSModel.FK_tbl_transit_scan_id_device_tbl_pendaftaran_mobil" FromRole="tbl_pendaftaran_mobil" ToRole="tbl_transit_scan_id_device" />
+          <NavigationProperty Name="tbl_transit_scan_id_timbangan" Relationship="SRSModel.FK_tbl_transit_scan_id_timbangan_tbl_pendaftaran_mobil" FromRole="tbl_pendaftaran_mobil" ToRole="tbl_transit_scan_id_timbangan" />
+          <NavigationProperty Name="tbl_transit_timbangan" Relationship="SRSModel.FK_tbl_transit_timbangan_tbl_pendaftaran_mobil" FromRole="tbl_pendaftaran_mobil" ToRole="tbl_transit_timbangan" />
+          <NavigationProperty Name="tbl_transit_core_sampling" Relationship="SRSModel.FK_tbl_transit_core_sampling_tbl_pendaftaran_mobil" FromRole="tbl_pendaftaran_mobil" ToRole="tbl_transit_core_sampling" />
+        </EntityType>
+        <Association Name="FK_tbl_transit_scan_id_device_tbl_pendaftaran_mobil">
+          <End Type="SRSModel.tbl_pendaftaran_mobil" Role="tbl_pendaftaran_mobil" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SRSModel.tbl_transit_scan_id_device" Role="tbl_transit_scan_id_device" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_pendaftaran_mobil">
+              <PropertyRef Name="doc_entry" />
+            </Principal>
+            <Dependent Role="tbl_transit_scan_id_device">
+              <PropertyRef Name="base_entry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_transit_scan_id_timbangan_tbl_pendaftaran_mobil">
+          <End Type="SRSModel.tbl_pendaftaran_mobil" Role="tbl_pendaftaran_mobil" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SRSModel.tbl_transit_scan_id_timbangan" Role="tbl_transit_scan_id_timbangan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_pendaftaran_mobil">
+              <PropertyRef Name="doc_entry" />
+            </Principal>
+            <Dependent Role="tbl_transit_scan_id_timbangan">
+              <PropertyRef Name="base_entry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_tbl_transit_timbangan_tbl_pendaftaran_mobil">
+          <End Type="SRSModel.tbl_pendaftaran_mobil" Role="tbl_pendaftaran_mobil" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SRSModel.tbl_transit_timbangan" Role="tbl_transit_timbangan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_pendaftaran_mobil">
+              <PropertyRef Name="doc_entry" />
+            </Principal>
+            <Dependent Role="tbl_transit_timbangan">
+              <PropertyRef Name="base_entry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tbl_periode_giling">
+          <Key>
+            <PropertyRef Name="periode_id" />
+          </Key>
+          <Property Name="periode_id" Type="Int32" Nullable="false" />
+          <Property Name="begin_date" Type="DateTime" Precision="0" />
+          <Property Name="end_date" Type="DateTime" Precision="0" />
+          <Property Name="date_closed" Type="DateTime" Precision="3" />
+          <Property Name="grace_period" Type="Int16" />
+          <Property Name="closed" Type="Boolean" Nullable="false" />
+          <Property Name="update_by" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_periode_trx">
+          <Key>
+            <PropertyRef Name="period_trx" />
+          </Key>
+          <Property Name="period_trx" Type="Int32" Nullable="false" />
+          <Property Name="periode_giling" Type="Int32" Nullable="false" />
+          <Property Name="begin_date" Type="DateTime" Precision="0" />
+          <Property Name="end_date" Type="DateTime" Precision="0" />
+          <Property Name="periode_id" Type="Int32" />
+          <Property Name="date_closed" Type="DateTime" Precision="3" />
+          <Property Name="grace_period" Type="Int16" />
+          <Property Name="closed" Type="Boolean" Nullable="false" />
+          <Property Name="update_by" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tbl_transit_core_sampling">
+          <Key>
+            <PropertyRef Name="doc_entry" />
+            <PropertyRef Name="base_entry" />
+            <PropertyRef Name="num_at_card" />
+          </Key>
+          <Property Name="doc_entry" Type="Int32" Nullable="false" />
+          <Property Name="base_entry" Type="Int32" Nullable="false" />
+          <Property Name="num_at_card" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="car_id" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="driver" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="device_ip_address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="pol_manual" Type="Decimal" Precision="19" Scale="6" />
+          <Property Name="brix_manual" Type="Decimal" Precision="19" Scale="6" />
+          <Property Name="rendemen_manual" Type="Decimal" Precision="19" Scale="6" />
+          <Property Name="pol_nir" Type="Decimal" Precision="19" Scale="6" />
+          <Property Name="brix_nir" Type="Decimal" Precision="19" Scale="6" />
+          <Property Name="rendemen_nir" Type="Decimal" Precision="19" Scale="6" />
+          <Property Name="harga" Type="Decimal" Precision="19" Scale="6" />
+          <Property Name="potongan" Type="Decimal" Precision="19" Scale="6" />
+          <Property Name="status" Type="Int32" />
+          <Property Name="id_basket" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="potongan_date" Type="DateTime" Precision="3" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="time" Type="String" MaxLength="12" FixedLength="false" Unicode="true" />
+          <Property Name="create_date" Type="DateTime" Precision="3" />
+          <Property Name="update_date" Type="DateTime" Precision="3" />
+          <Property Name="update_by" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="create_by" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="house_id" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="insentif" Type="Decimal" Precision="19" Scale="6" />
+          <NavigationProperty Name="tbl_pendaftaran_mobil" Relationship="SRSModel.FK_tbl_transit_core_sampling_tbl_pendaftaran_mobil" FromRole="tbl_transit_core_sampling" ToRole="tbl_pendaftaran_mobil" />
+          <Property Name="pembayaran" Type="Decimal" Precision="19" Scale="6" />
+          <Property Name="grkey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="invoicekey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="potongan_unreg_petani" Type="Decimal" Precision="19" Scale="2" />
+          <Property Name="opaykey" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_tbl_transit_core_sampling_tbl_pendaftaran_mobil">
+          <End Type="SRSModel.tbl_pendaftaran_mobil" Role="tbl_pendaftaran_mobil" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SRSModel.tbl_transit_core_sampling" Role="tbl_transit_core_sampling" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbl_pendaftaran_mobil">
+              <PropertyRef Name="doc_entry" />
+            </Principal>
+            <Dependent Role="tbl_transit_core_sampling">
+              <PropertyRef Name="base_entry" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="rendeman">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rendemen" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="bag_ptr_b" Type="Decimal" Nullable="false" Precision="18" Scale="4" />
+        </EntityType>
+        <EntityType Name="master_list">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="kode_mitra" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="nama_mitra" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ketua_kelompok" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="nama_kelompok" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="jenis_mitra" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="alamat_ktp" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="no_ktp" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="no_hp" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="no_kontrak" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="tgl_kontrak" Type="DateTime" Precision="3" />
+          <Property Name="luas" Type="Double" />
+          <Property Name="kategori" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="varietas" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="tgl_tanam" Type="DateTime" Precision="3" />
+          <Property Name="rayon" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="penanggung_jawab" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="koordinat_x" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="koordinat_y" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="kelurahan" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="kecamatan" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="kabupaten" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="no_rek" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="an_rek" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="bank_rek" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="kud" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="tgl_panen" Type="DateTime" Precision="3" />
+          <Property Name="est_tch" Type="Double" />
+          <Property Name="est_hasil_panen" Type="Double" />
+          <Property Name="est_radius" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="reg_status" Type="Boolean" />
+          <Property Name="est_ritase" Type="Int32" />
+          <Property Name="period_trx" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="Masterlist2">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="kode_mitra" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="nama_mitra" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ketua_kelompok" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="nama_kelompok" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="jenis_mitra" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="alamat_ktp" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="no_ktp" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="no_hp" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="no_kontrak" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="tgl_kontrak" Type="DateTime" Precision="3" />
+          <Property Name="luas" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="kategori" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="varietas" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="tgl_tanam" Type="DateTime" Precision="3" />
+          <Property Name="rayon" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="penanggung_jawab" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="koordinat_x" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="koordinat_y" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="kelurahan" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="kecamatan" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="kabupaten" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="no_rek" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="an_rek" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="bank_rek" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="kud" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="tgl_panen" Type="DateTime" Precision="3" />
+          <Property Name="est_tch" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="est_hasil_panen" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="est_radius" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="reg_status" Type="Boolean" />
+          <Property Name="est_ritase" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="year_period" Type="Int32" Nullable="false" />
+          <Property Name="period_trx" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="id_kptr" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Tiket">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NamaKUD" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NoTiket" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NamaPetani" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NamaPetani2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="KodeRegister" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="KodeRegister2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Alamat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Alamat2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DibuatOleh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DiserahkanOlehJabatan" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PenanggungJawab" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PenanggungJawabJabatan" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Driver" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NoTruck" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LuasLahan" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="VarietasTebu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LokasiDesa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LokasiKec" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LokasiKab" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="KodeMitra" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreateBy" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTerminal" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateBy" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateTerminal" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="tglTTA" Type="DateTime" Precision="3" />
+          <Property Name="tglKontrak" Type="DateTime" Precision="3" />
+          <Property Name="EstBeratTebu" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="KodeMitra2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="kategori" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="est_tch" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="est_ritase" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="est_hasil_panen" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="est_radius" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="tgl_panen" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="no_kontrak" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="est_luas_panen" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="rayon" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="id_status" Type="Boolean" />
+          <Property Name="tiket_master_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tiket_history">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NamaKUD" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NoTiket" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NamaPetani" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NamaPetani2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="KodeRegister" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="KodeRegister2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Alamat" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Alamat2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DibuatOleh" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="DiserahkanOlehJabatan" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PenanggungJawab" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="PenanggungJawabJabatan" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Driver" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NoTruck" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LuasLahan" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="VarietasTebu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LokasiDesa" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LokasiKec" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="LokasiKab" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="KodeMitra" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CreateBy" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CreateTerminal" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdateBy" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="UpdateTerminal" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="tglTTA" Type="DateTime" Precision="3" />
+          <Property Name="tglKontrak" Type="DateTime" Precision="3" />
+          <Property Name="EstBeratTebu" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="KodeMitra2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="kategori" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="est_tch" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="est_ritase" Type="Int32" />
+          <Property Name="est_hasil_panen" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="est_radius" Type="Int32" />
+          <Property Name="tgl_panen" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="no_kontrak" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="est_luas_panen" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="rayon" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="id_status" Type="Boolean" />
+          <Property Name="tiket_master_id" Type="Int32" />
+          <Property Name="id_ref" Type="Int32" />
+        </EntityType>
+        <EntityType Name="tbl_error">
+          <Key>
+            <PropertyRef Name="DocEntry" />
+          </Key>
+          <Property Name="DocEntry" Type="Int32" Nullable="false" />
+          <Property Name="DeviceType" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="DeviceLocation" Type="String" MaxLength="1" FixedLength="false" Unicode="true" />
+          <Property Name="DeviceIPAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CreateDate" Type="DateTime" Precision="3" />
+          <Property Name="Status" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="trans_data_header">
+          <Key>
+            <PropertyRef Name="trans_id" />
+          </Key>
+          <Property Name="trans_id" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="date_trans" Type="DateTime" Precision="3" />
+          <Property Name="partner_id" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="ref_id" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="status_invoice" Type="Boolean" />
+          <Property Name="validasi" Type="Boolean" />
+          <Property Name="closed" Type="Boolean" />
+          <Property Name="periode" Type="Int32" />
+          <Property Name="year_period" Type="Int32" Nullable="false" />
+          <Property Name="create_date" Type="DateTime" Precision="3" />
+          <Property Name="create_by" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="update_date" Type="DateTime" Precision="3" />
+          <Property Name="update_by" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="trans_data_line" Relationship="SRSModel.FK_Detail_TransData_transdata" FromRole="trans_data_header" ToRole="trans_data_line" />
+          <Property Name="date_issued" Type="DateTime" Precision="3" />
+          <Property Name="type_trans" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="trans_data_type" Relationship="SRSModel.FK_trans_data_header_trans_data_type" FromRole="trans_data_header" ToRole="trans_data_type" />
+        </EntityType>
+        <EntityType Name="trans_data_line">
+          <Key>
+            <PropertyRef Name="idx" />
+          </Key>
+          <Property Name="idx" Type="Guid" Nullable="false" />
+          <Property Name="trans_id" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="type_trans" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="base_entry" Type="Int32" />
+          <Property Name="date_issued" Type="DateTime" Precision="3" />
+          <Property Name="debet" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="credit" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="discount" Type="Decimal" Precision="18" Scale="10" />
+          <Property Name="status" Type="Boolean" />
+          <Property Name="ref_notes" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="trans_data_header" Relationship="SRSModel.FK_Detail_TransData_transdata" FromRole="trans_data_line" ToRole="trans_data_header" />
+          <NavigationProperty Name="trans_data_type" Relationship="SRSModel.FK_trans_data_line_trans_data_type" FromRole="trans_data_line" ToRole="trans_data_type" />
+        </EntityType>
+        <EntityType Name="trans_data_type">
+          <Key>
+            <PropertyRef Name="type_id" />
+          </Key>
+          <Property Name="SeqNo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="type_id" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="type_desc" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="Boolean" />
+          <NavigationProperty Name="trans_data_line" Relationship="SRSModel.FK_trans_data_line_trans_data_type" FromRole="trans_data_type" ToRole="trans_data_line" />
+          <NavigationProperty Name="trans_data_header" Relationship="SRSModel.FK_trans_data_header_trans_data_type" FromRole="trans_data_type" ToRole="trans_data_header" />
+        </EntityType>
+        <Association Name="FK_Detail_TransData_transdata">
+          <End Type="SRSModel.trans_data_header" Role="trans_data_header" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SRSModel.trans_data_line" Role="trans_data_line" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="trans_data_header">
+              <PropertyRef Name="trans_id" />
+            </Principal>
+            <Dependent Role="trans_data_line">
+              <PropertyRef Name="trans_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_trans_data_line_trans_data_type">
+          <End Type="SRSModel.trans_data_type" Role="trans_data_type" Multiplicity="0..1" />
+          <End Type="SRSModel.trans_data_line" Role="trans_data_line" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="trans_data_type">
+              <PropertyRef Name="type_id" />
+            </Principal>
+            <Dependent Role="trans_data_line">
+              <PropertyRef Name="type_trans" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <ComplexType Name="spLoadCicilan_Result">
+          <Property Type="Int32" Name="base_entry" Nullable="false" />
+          <Property Type="String" Name="kode_mitra" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="nama_mitra" Nullable="true" MaxLength="255" />
+          <Property Type="DateTime" Name="date_out" Nullable="true" Precision="23" />
+          <Property Type="Decimal" Name="harga" Nullable="true" Precision="19" Scale="6" />
+          <Property Type="Decimal" Name="net_weight" Nullable="true" Precision="19" Scale="2" />
+          <Property Type="Decimal" Name="pembayaran" Nullable="true" Precision="19" Scale="6" />
+          <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+          <Property Type="String" Name="jenis_mitra" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="no_rek" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <EntityType Name="m_conf_acc">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="inv_code" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="cash_acc_no" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="ar_acc_no" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="ex_acc_no" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="item_name" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="kode_gudang" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <ComplexType Name="CariNamaPetani_Result">
+          <Property Type="String" Name="kode_mitra" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="nama_mitra" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="alamat_ktp" Nullable="true" MaxLength="255" />
+          <Property Type="String" Name="rayon" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="spLoadBayarAll_Result">
+          <Property Type="Int32" Name="base_entry" Nullable="false" />
+          <Property Type="String" Name="card_code" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="card_name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="grkey" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="invoicekey" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="pembayaran" Nullable="true" Precision="19" Scale="6" />
+          <Property Type="Decimal" Name="net_weight" Nullable="true" Precision="19" Scale="2" />
+          <Property Type="DateTime" Name="date_out" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+          <Property Type="String" Name="jenis_mitra" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <ComplexType Name="spLoadBayarMitra_Result">
+          <Property Type="Int32" Name="base_entry" Nullable="false" />
+          <Property Type="String" Name="card_code" Nullable="true" MaxLength="15" />
+          <Property Type="String" Name="card_name" Nullable="true" MaxLength="100" />
+          <Property Type="String" Name="grkey" Nullable="true" MaxLength="50" />
+          <Property Type="String" Name="invoicekey" Nullable="true" MaxLength="50" />
+          <Property Type="Decimal" Name="pembayaran" Nullable="true" Precision="19" Scale="6" />
+          <Property Type="Decimal" Name="net_weight" Nullable="true" Precision="19" Scale="2" />
+          <Property Type="DateTime" Name="date_out" Nullable="true" Precision="23" />
+          <Property Type="DateTime" Name="create_date" Nullable="true" Precision="23" />
+          <Property Type="String" Name="jenis_mitra" Nullable="true" MaxLength="255" />
+        </ComplexType>
+        <Association Name="FK_trans_data_header_trans_data_type">
+          <End Type="SRSModel.trans_data_type" Role="trans_data_type" Multiplicity="0..1" />
+          <End Type="SRSModel.trans_data_header" Role="trans_data_header" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="trans_data_type">
+              <PropertyRef Name="type_id" />
+            </Principal>
+            <Dependent Role="trans_data_header">
+              <PropertyRef Name="type_trans" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SRSModelStoreContainer" CdmEntityContainer="SRSEntities">
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="SRSModel.User">
+              <MappingFragment StoreEntitySet="User">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateTerminal" ColumnName="CreateTerminal" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateTerminal" ColumnName="UpdateTerminal" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_transit_scan_id_device">
+            <EntityTypeMapping TypeName="SRSModel.tbl_transit_scan_id_device">
+              <MappingFragment StoreEntitySet="tbl_transit_scan_id_device">
+                <ScalarProperty Name="update_by" ColumnName="update_by" />
+                <ScalarProperty Name="update_date" ColumnName="update_date" />
+                <ScalarProperty Name="create_by" ColumnName="create_by" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="device_ip_address" ColumnName="device_ip_address" />
+                <ScalarProperty Name="device_type" ColumnName="device_type" />
+                <ScalarProperty Name="driver" ColumnName="driver" />
+                <ScalarProperty Name="car_id" ColumnName="car_id" />
+                <ScalarProperty Name="num_at_card" ColumnName="num_at_card" />
+                <ScalarProperty Name="base_entry" ColumnName="base_entry" />
+                <ScalarProperty Name="doc_entry" ColumnName="doc_entry" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_transit_scan_id_timbangan">
+            <EntityTypeMapping TypeName="SRSModel.tbl_transit_scan_id_timbangan">
+              <MappingFragment StoreEntitySet="tbl_transit_scan_id_timbangan">
+                <ScalarProperty Name="status_out2" ColumnName="status_out2" />
+                <ScalarProperty Name="status_in2" ColumnName="status_in2" />
+                <ScalarProperty Name="update_by" ColumnName="update_by" />
+                <ScalarProperty Name="update_date" ColumnName="update_date" />
+                <ScalarProperty Name="create_by" ColumnName="create_by" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="status_out" ColumnName="status_out" />
+                <ScalarProperty Name="status_in" ColumnName="status_in" />
+                <ScalarProperty Name="date_in" ColumnName="date_in" />
+                <ScalarProperty Name="scan_out_ip_address" ColumnName="scan_out_ip_address" />
+                <ScalarProperty Name="scan_in_ip_address" ColumnName="scan_in_ip_address" />
+                <ScalarProperty Name="driver" ColumnName="driver" />
+                <ScalarProperty Name="car_id" ColumnName="car_id" />
+                <ScalarProperty Name="num_at_card" ColumnName="num_at_card" />
+                <ScalarProperty Name="base_entry" ColumnName="base_entry" />
+                <ScalarProperty Name="doc_entry" ColumnName="doc_entry" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_transit_timbangan">
+            <EntityTypeMapping TypeName="SRSModel.tbl_transit_timbangan">
+              <MappingFragment StoreEntitySet="tbl_transit_timbangan">
+                <ScalarProperty Name="tiketno" ColumnName="tiketno" />
+                <ScalarProperty Name="status_out2" ColumnName="status_out2" />
+                <ScalarProperty Name="status_in2" ColumnName="status_in2" />
+                <ScalarProperty Name="create_by" ColumnName="create_by" />
+                <ScalarProperty Name="update_by" ColumnName="update_by" />
+                <ScalarProperty Name="update_date" ColumnName="update_date" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="status_out" ColumnName="status_out" />
+                <ScalarProperty Name="status_in" ColumnName="status_in" />
+                <ScalarProperty Name="date_out" ColumnName="date_out" />
+                <ScalarProperty Name="date_in" ColumnName="date_in" />
+                <ScalarProperty Name="net_weight" ColumnName="net_weight" />
+                <ScalarProperty Name="car_weight" ColumnName="car_weight" />
+                <ScalarProperty Name="gross_weight" ColumnName="gross_weight" />
+                <ScalarProperty Name="bridge_out_ip_address" ColumnName="bridge_out_ip_address" />
+                <ScalarProperty Name="bridge_in_ip_address" ColumnName="bridge_in_ip_address" />
+                <ScalarProperty Name="driver" ColumnName="driver" />
+                <ScalarProperty Name="car_id" ColumnName="car_id" />
+                <ScalarProperty Name="num_at_card" ColumnName="num_at_card" />
+                <ScalarProperty Name="base_entry" ColumnName="base_entry" />
+                <ScalarProperty Name="doc_entry" ColumnName="doc_entry" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="shared_timbangan_in">
+            <EntityTypeMapping TypeName="SRSModel.shared_timbangan_in">
+              <MappingFragment StoreEntitySet="shared_timbangan_in">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="BeratKotor" ColumnName="BeratKotor" />
+                <ScalarProperty Name="NoTimbangan" ColumnName="NoTimbangan" />
+                <ScalarProperty Name="NoTTA" ColumnName="NoTTA" />
+                <ScalarProperty Name="Driver" ColumnName="Driver" />
+                <ScalarProperty Name="PlatNo" ColumnName="PlatNo" />
+                <ScalarProperty Name="TanggalProses" ColumnName="TanggalProses" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="shared_core_sampling">
+            <EntityTypeMapping TypeName="SRSModel.shared_core_sampling">
+              <MappingFragment StoreEntitySet="shared_core_sampling">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="BARCODE" ColumnName="BARCODE" />
+                <ScalarProperty Name="BRIX" ColumnName="BRIX" />
+                <ScalarProperty Name="POL" ColumnName="POL" />
+                <ScalarProperty Name="Line" ColumnName="Line" />
+                <ScalarProperty Name="NoTTA" ColumnName="NoTTA" />
+                <ScalarProperty Name="Driver" ColumnName="Driver" />
+                <ScalarProperty Name="PlatNo" ColumnName="PlatNo" />
+                <ScalarProperty Name="TanggalProses" ColumnName="TanggalProses" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="device_config">
+            <EntityTypeMapping TypeName="SRSModel.device_config">
+              <MappingFragment StoreEntitySet="device_config">
+                <ScalarProperty Name="print_counter" ColumnName="print_counter" />
+                <ScalarProperty Name="print_max_count" ColumnName="print_max_count" />
+                <ScalarProperty Name="folder_nir" ColumnName="folder_nir" />
+                <ScalarProperty Name="ip_nir" ColumnName="ip_nir" />
+                <ScalarProperty Name="fld_data_manual" ColumnName="fld_data_manual" />
+                <ScalarProperty Name="fld_data_nir" ColumnName="fld_data_nir" />
+                <ScalarProperty Name="type_id" ColumnName="type_id" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="update_by" ColumnName="update_by" />
+                <ScalarProperty Name="update_date" ColumnName="update_date" />
+                <ScalarProperty Name="create_by" ColumnName="create_by" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="location" ColumnName="location" />
+                <ScalarProperty Name="device_ip" ColumnName="device_ip" />
+                <ScalarProperty Name="device_name" ColumnName="device_name" />
+                <ScalarProperty Name="device_id" ColumnName="device_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="lookup_header">
+            <EntityTypeMapping TypeName="SRSModel.lookup_header">
+              <MappingFragment StoreEntitySet="lookup_header">
+                <ScalarProperty Name="update_date" ColumnName="update_date" />
+                <ScalarProperty Name="update_by" ColumnName="update_by" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="header_desc" ColumnName="header_desc" />
+                <ScalarProperty Name="header_id" ColumnName="header_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="lookup_line">
+            <EntityTypeMapping TypeName="SRSModel.lookup_line">
+              <MappingFragment StoreEntitySet="lookup_line">
+                <ScalarProperty Name="update_date" ColumnName="update_date" />
+                <ScalarProperty Name="update_by" ColumnName="update_by" />
+                <ScalarProperty Name="created_date" ColumnName="created_date" />
+                <ScalarProperty Name="created_by" ColumnName="created_by" />
+                <ScalarProperty Name="line_desc" ColumnName="line_desc" />
+                <ScalarProperty Name="line_code" ColumnName="line_code" />
+                <ScalarProperty Name="header_id" ColumnName="header_id" />
+                <ScalarProperty Name="line_id" ColumnName="line_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_master_form">
+            <EntityTypeMapping TypeName="SRSModel.user_master_form">
+              <MappingFragment StoreEntitySet="user_master_form">
+                <ScalarProperty Name="setup_series_no" ColumnName="setup_series_no" />
+                <ScalarProperty Name="form_file_name" ColumnName="form_file_name" />
+                <ScalarProperty Name="form_name" ColumnName="form_name" />
+                <ScalarProperty Name="form_id" ColumnName="form_id" />
+                <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_master_menu">
+            <EntityTypeMapping TypeName="SRSModel.user_master_menu">
+              <MappingFragment StoreEntitySet="user_master_menu">
+                <ScalarProperty Name="history_view" ColumnName="history_view" />
+                <ScalarProperty Name="history_form" ColumnName="history_form" />
+                <ScalarProperty Name="seq_order" ColumnName="seq_order" />
+                <ScalarProperty Name="run_script" ColumnName="run_script" />
+                <ScalarProperty Name="module_id" ColumnName="module_id" />
+                <ScalarProperty Name="popup_menu" ColumnName="popup_menu" />
+                <ScalarProperty Name="parent" ColumnName="parent" />
+                <ScalarProperty Name="menu_run" ColumnName="menu_run" />
+                <ScalarProperty Name="seq_level" ColumnName="seq_level" />
+                <ScalarProperty Name="form_id" ColumnName="form_id" />
+                <ScalarProperty Name="caption" ColumnName="caption" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="menu_id" ColumnName="menu_id" />
+                <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_master_modules">
+            <EntityTypeMapping TypeName="SRSModel.user_master_modules">
+              <MappingFragment StoreEntitySet="user_master_modules">
+                <ScalarProperty Name="seq_no" ColumnName="seq_no" />
+                <ScalarProperty Name="module_desc" ColumnName="module_desc" />
+                <ScalarProperty Name="module_id" ColumnName="module_id" />
+                <ScalarProperty Name="timestamp" ColumnName="timestamp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_table">
+            <EntityTypeMapping TypeName="SRSModel.user_table">
+              <MappingFragment StoreEntitySet="user_table">
+                <ScalarProperty Name="sql_user" ColumnName="sql_user" />
+                <ScalarProperty Name="login_status" ColumnName="login_status" />
+                <ScalarProperty Name="closing_status" ColumnName="closing_status" />
+                <ScalarProperty Name="Name_dept" ColumnName="Name_dept" />
+                <ScalarProperty Name="employee" ColumnName="employee" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="dept" ColumnName="dept" />
+                <ScalarProperty Name="Group_User" ColumnName="Group User" />
+                <ScalarProperty Name="EmpID" ColumnName="EmpID" />
+                <ScalarProperty Name="User_Name" ColumnName="User Name" />
+                <ScalarProperty Name="User_ID" ColumnName="User ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_table_group">
+            <EntityTypeMapping TypeName="SRSModel.user_table_group">
+              <MappingFragment StoreEntitySet="user_table_group">
+                <ScalarProperty Name="sql_password" ColumnName="sql_password" />
+                <ScalarProperty Name="sql_user" ColumnName="sql_user" />
+                <ScalarProperty Name="default_delete" ColumnName="default_delete" />
+                <ScalarProperty Name="Group_Name" ColumnName="Group Name" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_access_list">
+            <EntityTypeMapping TypeName="SRSModel.user_access_list">
+              <MappingFragment StoreEntitySet="user_access_list">
+                <ScalarProperty Name="visible" ColumnName="visible" />
+                <ScalarProperty Name="form_id" ColumnName="form_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_kabupaten">
+            <EntityTypeMapping TypeName="SRSModel.tbl_kabupaten">
+              <MappingFragment StoreEntitySet="tbl_kabupaten">
+                <ScalarProperty Name="kab_name" ColumnName="kab_name" />
+                <ScalarProperty Name="kab_id" ColumnName="kab_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_kecamatan">
+            <EntityTypeMapping TypeName="SRSModel.tbl_kecamatan">
+              <MappingFragment StoreEntitySet="tbl_kecamatan">
+                <ScalarProperty Name="kec_name" ColumnName="kec_name" />
+                <ScalarProperty Name="kec_id" ColumnName="kec_id" />
+                <ScalarProperty Name="kab_id" ColumnName="kab_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_kelurahan">
+            <EntityTypeMapping TypeName="SRSModel.tbl_kelurahan">
+              <MappingFragment StoreEntitySet="tbl_kelurahan">
+                <ScalarProperty Name="kel_name" ColumnName="kel_name" />
+                <ScalarProperty Name="kec_id" ColumnName="kec_id" />
+                <ScalarProperty Name="kab_id" ColumnName="kab_id" />
+                <ScalarProperty Name="kel_id" ColumnName="kel_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tiket_header">
+            <EntityTypeMapping TypeName="SRSModel.tiket_header">
+              <MappingFragment StoreEntitySet="tiket_header">
+                <ScalarProperty Name="upload_status" ColumnName="upload_status" />
+                <ScalarProperty Name="upload_desc" ColumnName="upload_desc" />
+                <ScalarProperty Name="file_excel" ColumnName="file_excel" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tiket_template">
+            <EntityTypeMapping TypeName="SRSModel.tiket_template">
+              <MappingFragment StoreEntitySet="tiket_template">
+                <ScalarProperty Name="NoTiket" ColumnName="NoTiket" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="trans_data_saldo">
+            <EntityTypeMapping TypeName="SRSModel.trans_data_saldo">
+              <MappingFragment StoreEntitySet="trans_data_saldo">
+                <ScalarProperty Name="year_period" ColumnName="year_period" />
+                <ScalarProperty Name="currentcr12" ColumnName="currentcr12" />
+                <ScalarProperty Name="currentdr12" ColumnName="currentdr12" />
+                <ScalarProperty Name="currentcr11" ColumnName="currentcr11" />
+                <ScalarProperty Name="currentdr11" ColumnName="currentdr11" />
+                <ScalarProperty Name="currentcr10" ColumnName="currentcr10" />
+                <ScalarProperty Name="currentdr10" ColumnName="currentdr10" />
+                <ScalarProperty Name="currentcr9" ColumnName="currentcr9" />
+                <ScalarProperty Name="currentdr9" ColumnName="currentdr9" />
+                <ScalarProperty Name="currentcr8" ColumnName="currentcr8" />
+                <ScalarProperty Name="currentdr8" ColumnName="currentdr8" />
+                <ScalarProperty Name="currentcr7" ColumnName="currentcr7" />
+                <ScalarProperty Name="currentdr7" ColumnName="currentdr7" />
+                <ScalarProperty Name="currentcr6" ColumnName="currentcr6" />
+                <ScalarProperty Name="currentdr6" ColumnName="currentdr6" />
+                <ScalarProperty Name="currentcr5" ColumnName="currentcr5" />
+                <ScalarProperty Name="currentdr5" ColumnName="currentdr5" />
+                <ScalarProperty Name="currentcr4" ColumnName="currentcr4" />
+                <ScalarProperty Name="currentdr4" ColumnName="currentdr4" />
+                <ScalarProperty Name="currentcr3" ColumnName="currentcr3" />
+                <ScalarProperty Name="currentdr3" ColumnName="currentdr3" />
+                <ScalarProperty Name="currentcr2" ColumnName="currentcr2" />
+                <ScalarProperty Name="currentdr2" ColumnName="currentdr2" />
+                <ScalarProperty Name="currentcr1" ColumnName="currentcr1" />
+                <ScalarProperty Name="currentdr1" ColumnName="currentdr1" />
+                <ScalarProperty Name="currentcr0" ColumnName="currentcr0" />
+                <ScalarProperty Name="currentdr0" ColumnName="currentdr0" />
+                <ScalarProperty Name="partner_id" ColumnName="partner_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_pendaftaran_mobil">
+            <EntityTypeMapping TypeName="SRSModel.tbl_pendaftaran_mobil">
+              <MappingFragment StoreEntitySet="tbl_pendaftaran_mobil">
+                <ScalarProperty Name="car_type" ColumnName="car_type" />
+                <ScalarProperty Name="update_by" ColumnName="update_by" />
+                <ScalarProperty Name="update_date" ColumnName="update_date" />
+                <ScalarProperty Name="create_by" ColumnName="create_by" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="user_sign" ColumnName="user_sign" />
+                <ScalarProperty Name="ip_address" ColumnName="ip_address" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="driver" ColumnName="driver" />
+                <ScalarProperty Name="car_id" ColumnName="car_id" />
+                <ScalarProperty Name="num_at_card" ColumnName="num_at_card" />
+                <ScalarProperty Name="tta_date" ColumnName="tta_date" />
+                <ScalarProperty Name="tta_number" ColumnName="tta_number" />
+                <ScalarProperty Name="card_name_reg" ColumnName="card_name_reg" />
+                <ScalarProperty Name="card_code_reg" ColumnName="card_code_reg" />
+                <ScalarProperty Name="card_name" ColumnName="card_name" />
+                <ScalarProperty Name="card_code" ColumnName="card_code" />
+                <ScalarProperty Name="doc_date" ColumnName="doc_date" />
+                <ScalarProperty Name="doc_entry" ColumnName="doc_entry" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_periode_giling">
+            <EntityTypeMapping TypeName="SRSModel.tbl_periode_giling">
+              <MappingFragment StoreEntitySet="tbl_periode_giling">
+                <ScalarProperty Name="update_by" ColumnName="update_by" />
+                <ScalarProperty Name="closed" ColumnName="closed" />
+                <ScalarProperty Name="grace_period" ColumnName="grace_period" />
+                <ScalarProperty Name="date_closed" ColumnName="date_closed" />
+                <ScalarProperty Name="end_date" ColumnName="end_date" />
+                <ScalarProperty Name="begin_date" ColumnName="begin_date" />
+                <ScalarProperty Name="periode_id" ColumnName="periode_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_periode_trx">
+            <EntityTypeMapping TypeName="SRSModel.tbl_periode_trx">
+              <MappingFragment StoreEntitySet="tbl_periode_trx">
+                <ScalarProperty Name="update_by" ColumnName="update_by" />
+                <ScalarProperty Name="closed" ColumnName="closed" />
+                <ScalarProperty Name="grace_period" ColumnName="grace_period" />
+                <ScalarProperty Name="date_closed" ColumnName="date_closed" />
+                <ScalarProperty Name="periode_id" ColumnName="periode_id" />
+                <ScalarProperty Name="end_date" ColumnName="end_date" />
+                <ScalarProperty Name="begin_date" ColumnName="begin_date" />
+                <ScalarProperty Name="periode_giling" ColumnName="periode_giling" />
+                <ScalarProperty Name="period_trx" ColumnName="period_trx" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_transit_core_sampling">
+            <EntityTypeMapping TypeName="SRSModel.tbl_transit_core_sampling">
+              <MappingFragment StoreEntitySet="tbl_transit_core_sampling">
+                <ScalarProperty Name="opaykey" ColumnName="opaykey" />
+                <ScalarProperty Name="potongan_unreg_petani" ColumnName="potongan_unreg_petani" />
+                <ScalarProperty Name="invoicekey" ColumnName="invoicekey" />
+                <ScalarProperty Name="grkey" ColumnName="grkey" />
+                <ScalarProperty Name="pembayaran" ColumnName="pembayaran" />
+                <ScalarProperty Name="insentif" ColumnName="insentif" />
+                <ScalarProperty Name="house_id" ColumnName="house_id" />
+                <ScalarProperty Name="create_by" ColumnName="create_by" />
+                <ScalarProperty Name="update_by" ColumnName="update_by" />
+                <ScalarProperty Name="update_date" ColumnName="update_date" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="time" ColumnName="time" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="potongan_date" ColumnName="potongan_date" />
+                <ScalarProperty Name="id_basket" ColumnName="id_basket" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="potongan" ColumnName="potongan" />
+                <ScalarProperty Name="harga" ColumnName="harga" />
+                <ScalarProperty Name="rendemen_nir" ColumnName="rendemen_nir" />
+                <ScalarProperty Name="brix_nir" ColumnName="brix_nir" />
+                <ScalarProperty Name="pol_nir" ColumnName="pol_nir" />
+                <ScalarProperty Name="rendemen_manual" ColumnName="rendemen_manual" />
+                <ScalarProperty Name="brix_manual" ColumnName="brix_manual" />
+                <ScalarProperty Name="pol_manual" ColumnName="pol_manual" />
+                <ScalarProperty Name="device_ip_address" ColumnName="device_ip_address" />
+                <ScalarProperty Name="driver" ColumnName="driver" />
+                <ScalarProperty Name="car_id" ColumnName="car_id" />
+                <ScalarProperty Name="num_at_card" ColumnName="num_at_card" />
+                <ScalarProperty Name="base_entry" ColumnName="base_entry" />
+                <ScalarProperty Name="doc_entry" ColumnName="doc_entry" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="rendemen">
+            <EntityTypeMapping TypeName="SRSModel.rendeman">
+              <MappingFragment StoreEntitySet="rendemen">
+                <ScalarProperty Name="bag_ptr_b" ColumnName="bag_ptr_b" />
+                <ScalarProperty Name="rendemen" ColumnName="rendemen" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="master_list">
+            <EntityTypeMapping TypeName="SRSModel.master_list">
+              <MappingFragment StoreEntitySet="master_list">
+                <ScalarProperty Name="period_trx" ColumnName="period_trx" />
+                <ScalarProperty Name="est_ritase" ColumnName="est_ritase" />
+                <ScalarProperty Name="reg_status" ColumnName="reg_status" />
+                <ScalarProperty Name="est_radius" ColumnName="est_radius" />
+                <ScalarProperty Name="est_hasil_panen" ColumnName="est_hasil_panen" />
+                <ScalarProperty Name="est_tch" ColumnName="est_tch" />
+                <ScalarProperty Name="tgl_panen" ColumnName="tgl_panen" />
+                <ScalarProperty Name="kud" ColumnName="kud" />
+                <ScalarProperty Name="bank_rek" ColumnName="bank_rek" />
+                <ScalarProperty Name="an_rek" ColumnName="an_rek" />
+                <ScalarProperty Name="no_rek" ColumnName="no_rek" />
+                <ScalarProperty Name="kabupaten" ColumnName="kabupaten" />
+                <ScalarProperty Name="kecamatan" ColumnName="kecamatan" />
+                <ScalarProperty Name="kelurahan" ColumnName="kelurahan" />
+                <ScalarProperty Name="koordinat_y" ColumnName="koordinat_y" />
+                <ScalarProperty Name="koordinat_x" ColumnName="koordinat_x" />
+                <ScalarProperty Name="penanggung_jawab" ColumnName="penanggung_jawab" />
+                <ScalarProperty Name="rayon" ColumnName="rayon" />
+                <ScalarProperty Name="tgl_tanam" ColumnName="tgl_tanam" />
+                <ScalarProperty Name="varietas" ColumnName="varietas" />
+                <ScalarProperty Name="kategori" ColumnName="kategori" />
+                <ScalarProperty Name="luas" ColumnName="luas" />
+                <ScalarProperty Name="tgl_kontrak" ColumnName="tgl_kontrak" />
+                <ScalarProperty Name="no_kontrak" ColumnName="no_kontrak" />
+                <ScalarProperty Name="no_hp" ColumnName="no_hp" />
+                <ScalarProperty Name="no_ktp" ColumnName="no_ktp" />
+                <ScalarProperty Name="alamat_ktp" ColumnName="alamat_ktp" />
+                <ScalarProperty Name="jenis_mitra" ColumnName="jenis_mitra" />
+                <ScalarProperty Name="nama_kelompok" ColumnName="nama_kelompok" />
+                <ScalarProperty Name="ketua_kelompok" ColumnName="ketua_kelompok" />
+                <ScalarProperty Name="nama_mitra" ColumnName="nama_mitra" />
+                <ScalarProperty Name="kode_mitra" ColumnName="kode_mitra" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Masterlist2">
+            <EntityTypeMapping TypeName="SRSModel.Masterlist2">
+              <MappingFragment StoreEntitySet="Masterlist2">
+                <ScalarProperty Name="id_kptr" ColumnName="id_kptr" />
+                <ScalarProperty Name="period_trx" ColumnName="period_trx" />
+                <ScalarProperty Name="year_period" ColumnName="year_period" />
+                <ScalarProperty Name="est_ritase" ColumnName="est_ritase" />
+                <ScalarProperty Name="reg_status" ColumnName="reg_status" />
+                <ScalarProperty Name="est_radius" ColumnName="est_radius" />
+                <ScalarProperty Name="est_hasil_panen" ColumnName="est_hasil_panen" />
+                <ScalarProperty Name="est_tch" ColumnName="est_tch" />
+                <ScalarProperty Name="tgl_panen" ColumnName="tgl_panen" />
+                <ScalarProperty Name="kud" ColumnName="kud" />
+                <ScalarProperty Name="bank_rek" ColumnName="bank_rek" />
+                <ScalarProperty Name="an_rek" ColumnName="an_rek" />
+                <ScalarProperty Name="no_rek" ColumnName="no_rek" />
+                <ScalarProperty Name="kabupaten" ColumnName="kabupaten" />
+                <ScalarProperty Name="kecamatan" ColumnName="kecamatan" />
+                <ScalarProperty Name="kelurahan" ColumnName="kelurahan" />
+                <ScalarProperty Name="koordinat_y" ColumnName="koordinat_y" />
+                <ScalarProperty Name="koordinat_x" ColumnName="koordinat_x" />
+                <ScalarProperty Name="penanggung_jawab" ColumnName="penanggung_jawab" />
+                <ScalarProperty Name="rayon" ColumnName="rayon" />
+                <ScalarProperty Name="tgl_tanam" ColumnName="tgl_tanam" />
+                <ScalarProperty Name="varietas" ColumnName="varietas" />
+                <ScalarProperty Name="kategori" ColumnName="kategori" />
+                <ScalarProperty Name="luas" ColumnName="luas" />
+                <ScalarProperty Name="tgl_kontrak" ColumnName="tgl_kontrak" />
+                <ScalarProperty Name="no_kontrak" ColumnName="no_kontrak" />
+                <ScalarProperty Name="no_hp" ColumnName="no_hp" />
+                <ScalarProperty Name="no_ktp" ColumnName="no_ktp" />
+                <ScalarProperty Name="alamat_ktp" ColumnName="alamat_ktp" />
+                <ScalarProperty Name="jenis_mitra" ColumnName="jenis_mitra" />
+                <ScalarProperty Name="nama_kelompok" ColumnName="nama_kelompok" />
+                <ScalarProperty Name="ketua_kelompok" ColumnName="ketua_kelompok" />
+                <ScalarProperty Name="nama_mitra" ColumnName="nama_mitra" />
+                <ScalarProperty Name="kode_mitra" ColumnName="kode_mitra" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tikets">
+            <EntityTypeMapping TypeName="SRSModel.Tiket">
+              <MappingFragment StoreEntitySet="Tiket">
+                <ScalarProperty Name="tiket_master_id" ColumnName="tiket_master_id" />
+                <ScalarProperty Name="id_status" ColumnName="id_status" />
+                <ScalarProperty Name="rayon" ColumnName="rayon" />
+                <ScalarProperty Name="est_luas_panen" ColumnName="est_luas_panen" />
+                <ScalarProperty Name="no_kontrak" ColumnName="no_kontrak" />
+                <ScalarProperty Name="tgl_panen" ColumnName="tgl_panen" />
+                <ScalarProperty Name="est_radius" ColumnName="est_radius" />
+                <ScalarProperty Name="est_hasil_panen" ColumnName="est_hasil_panen" />
+                <ScalarProperty Name="est_ritase" ColumnName="est_ritase" />
+                <ScalarProperty Name="est_tch" ColumnName="est_tch" />
+                <ScalarProperty Name="kategori" ColumnName="kategori" />
+                <ScalarProperty Name="KodeMitra2" ColumnName="KodeMitra2" />
+                <ScalarProperty Name="EstBeratTebu" ColumnName="EstBeratTebu" />
+                <ScalarProperty Name="tglKontrak" ColumnName="tglKontrak" />
+                <ScalarProperty Name="tglTTA" ColumnName="tglTTA" />
+                <ScalarProperty Name="UpdateTerminal" ColumnName="UpdateTerminal" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreateTerminal" ColumnName="CreateTerminal" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="KodeMitra" ColumnName="KodeMitra" />
+                <ScalarProperty Name="LokasiKab" ColumnName="LokasiKab" />
+                <ScalarProperty Name="LokasiKec" ColumnName="LokasiKec" />
+                <ScalarProperty Name="LokasiDesa" ColumnName="LokasiDesa" />
+                <ScalarProperty Name="VarietasTebu" ColumnName="VarietasTebu" />
+                <ScalarProperty Name="LuasLahan" ColumnName="LuasLahan" />
+                <ScalarProperty Name="NoTruck" ColumnName="NoTruck" />
+                <ScalarProperty Name="Driver" ColumnName="Driver" />
+                <ScalarProperty Name="PenanggungJawabJabatan" ColumnName="PenanggungJawabJabatan" />
+                <ScalarProperty Name="PenanggungJawab" ColumnName="PenanggungJawab" />
+                <ScalarProperty Name="DiserahkanOlehJabatan" ColumnName="DiserahkanOlehJabatan" />
+                <ScalarProperty Name="DibuatOleh" ColumnName="DibuatOleh" />
+                <ScalarProperty Name="Alamat2" ColumnName="Alamat2" />
+                <ScalarProperty Name="Alamat" ColumnName="Alamat" />
+                <ScalarProperty Name="KodeRegister2" ColumnName="KodeRegister2" />
+                <ScalarProperty Name="KodeRegister" ColumnName="KodeRegister" />
+                <ScalarProperty Name="NamaPetani2" ColumnName="NamaPetani2" />
+                <ScalarProperty Name="NamaPetani" ColumnName="NamaPetani" />
+                <ScalarProperty Name="NoTiket" ColumnName="NoTiket" />
+                <ScalarProperty Name="NamaKUD" ColumnName="NamaKUD" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tiket_history">
+            <EntityTypeMapping TypeName="SRSModel.tiket_history">
+              <MappingFragment StoreEntitySet="tiket_history">
+                <ScalarProperty Name="id_ref" ColumnName="id_ref" />
+                <ScalarProperty Name="tiket_master_id" ColumnName="tiket_master_id" />
+                <ScalarProperty Name="id_status" ColumnName="id_status" />
+                <ScalarProperty Name="rayon" ColumnName="rayon" />
+                <ScalarProperty Name="est_luas_panen" ColumnName="est_luas_panen" />
+                <ScalarProperty Name="no_kontrak" ColumnName="no_kontrak" />
+                <ScalarProperty Name="tgl_panen" ColumnName="tgl_panen" />
+                <ScalarProperty Name="est_radius" ColumnName="est_radius" />
+                <ScalarProperty Name="est_hasil_panen" ColumnName="est_hasil_panen" />
+                <ScalarProperty Name="est_ritase" ColumnName="est_ritase" />
+                <ScalarProperty Name="est_tch" ColumnName="est_tch" />
+                <ScalarProperty Name="kategori" ColumnName="kategori" />
+                <ScalarProperty Name="KodeMitra2" ColumnName="KodeMitra2" />
+                <ScalarProperty Name="EstBeratTebu" ColumnName="EstBeratTebu" />
+                <ScalarProperty Name="tglKontrak" ColumnName="tglKontrak" />
+                <ScalarProperty Name="tglTTA" ColumnName="tglTTA" />
+                <ScalarProperty Name="UpdateTerminal" ColumnName="UpdateTerminal" />
+                <ScalarProperty Name="UpdateBy" ColumnName="UpdateBy" />
+                <ScalarProperty Name="UpdateDate" ColumnName="UpdateDate" />
+                <ScalarProperty Name="CreateTerminal" ColumnName="CreateTerminal" />
+                <ScalarProperty Name="CreateBy" ColumnName="CreateBy" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="KodeMitra" ColumnName="KodeMitra" />
+                <ScalarProperty Name="LokasiKab" ColumnName="LokasiKab" />
+                <ScalarProperty Name="LokasiKec" ColumnName="LokasiKec" />
+                <ScalarProperty Name="LokasiDesa" ColumnName="LokasiDesa" />
+                <ScalarProperty Name="VarietasTebu" ColumnName="VarietasTebu" />
+                <ScalarProperty Name="LuasLahan" ColumnName="LuasLahan" />
+                <ScalarProperty Name="NoTruck" ColumnName="NoTruck" />
+                <ScalarProperty Name="Driver" ColumnName="Driver" />
+                <ScalarProperty Name="PenanggungJawabJabatan" ColumnName="PenanggungJawabJabatan" />
+                <ScalarProperty Name="PenanggungJawab" ColumnName="PenanggungJawab" />
+                <ScalarProperty Name="DiserahkanOlehJabatan" ColumnName="DiserahkanOlehJabatan" />
+                <ScalarProperty Name="DibuatOleh" ColumnName="DibuatOleh" />
+                <ScalarProperty Name="Alamat2" ColumnName="Alamat2" />
+                <ScalarProperty Name="Alamat" ColumnName="Alamat" />
+                <ScalarProperty Name="KodeRegister2" ColumnName="KodeRegister2" />
+                <ScalarProperty Name="KodeRegister" ColumnName="KodeRegister" />
+                <ScalarProperty Name="NamaPetani2" ColumnName="NamaPetani2" />
+                <ScalarProperty Name="NamaPetani" ColumnName="NamaPetani" />
+                <ScalarProperty Name="NoTiket" ColumnName="NoTiket" />
+                <ScalarProperty Name="NamaKUD" ColumnName="NamaKUD" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbl_error">
+            <EntityTypeMapping TypeName="SRSModel.tbl_error">
+              <MappingFragment StoreEntitySet="tbl_error">
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
+                <ScalarProperty Name="DeviceIPAddress" ColumnName="DeviceIPAddress" />
+                <ScalarProperty Name="DeviceLocation" ColumnName="DeviceLocation" />
+                <ScalarProperty Name="DeviceType" ColumnName="DeviceType" />
+                <ScalarProperty Name="DocEntry" ColumnName="DocEntry" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="trans_data_header">
+            <EntityTypeMapping TypeName="SRSModel.trans_data_header">
+              <MappingFragment StoreEntitySet="trans_data_header">
+                <ScalarProperty Name="type_trans" ColumnName="type_trans" />
+                <ScalarProperty Name="date_issued" ColumnName="date_issued" />
+                <ScalarProperty Name="update_by" ColumnName="update_by" />
+                <ScalarProperty Name="update_date" ColumnName="update_date" />
+                <ScalarProperty Name="create_by" ColumnName="create_by" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="year_period" ColumnName="year_period" />
+                <ScalarProperty Name="periode" ColumnName="periode" />
+                <ScalarProperty Name="closed" ColumnName="closed" />
+                <ScalarProperty Name="validasi" ColumnName="validasi" />
+                <ScalarProperty Name="status_invoice" ColumnName="status_invoice" />
+                <ScalarProperty Name="ref_id" ColumnName="ref_id" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="partner_id" ColumnName="partner_id" />
+                <ScalarProperty Name="date_trans" ColumnName="date_trans" />
+                <ScalarProperty Name="trans_id" ColumnName="trans_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="trans_data_line">
+            <EntityTypeMapping TypeName="SRSModel.trans_data_line">
+              <MappingFragment StoreEntitySet="trans_data_line">
+                <ScalarProperty Name="ref_notes" ColumnName="ref_notes" />
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="discount" ColumnName="discount" />
+                <ScalarProperty Name="credit" ColumnName="credit" />
+                <ScalarProperty Name="debet" ColumnName="debet" />
+                <ScalarProperty Name="date_issued" ColumnName="date_issued" />
+                <ScalarProperty Name="base_entry" ColumnName="base_entry" />
+                <ScalarProperty Name="type_trans" ColumnName="type_trans" />
+                <ScalarProperty Name="trans_id" ColumnName="trans_id" />
+                <ScalarProperty Name="idx" ColumnName="idx" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="trans_data_type">
+            <EntityTypeMapping TypeName="SRSModel.trans_data_type">
+              <MappingFragment StoreEntitySet="trans_data_type">
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="type_desc" ColumnName="type_desc" />
+                <ScalarProperty Name="type_id" ColumnName="type_id" />
+                <ScalarProperty Name="SeqNo" ColumnName="SeqNo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spInsertTrans" FunctionName="SRSModel.Store.spInsertTrans" />
+          <FunctionImportMapping FunctionImportName="spLoadCicilan" FunctionName="SRSModel.Store.spLoadCicilan">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SRSModel.spLoadCicilan_Result">
+                <ScalarProperty Name="base_entry" ColumnName="base_entry" />
+                <ScalarProperty Name="kode_mitra" ColumnName="kode_mitra" />
+                <ScalarProperty Name="nama_mitra" ColumnName="nama_mitra" />
+                <ScalarProperty Name="date_out" ColumnName="date_out" />
+                <ScalarProperty Name="harga" ColumnName="harga" />
+                <ScalarProperty Name="net_weight" ColumnName="net_weight" />
+                <ScalarProperty Name="pembayaran" ColumnName="pembayaran" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="jenis_mitra" ColumnName="jenis_mitra" />
+                <ScalarProperty Name="no_rek" ColumnName="no_rek" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="m_conf_acc">
+            <EntityTypeMapping TypeName="SRSModel.m_conf_acc">
+              <MappingFragment StoreEntitySet="m_conf_acc">
+                <ScalarProperty Name="kode_gudang" ColumnName="kode_gudang" />
+                <ScalarProperty Name="item_name" ColumnName="item_name" />
+                <ScalarProperty Name="ex_acc_no" ColumnName="ex_acc_no" />
+                <ScalarProperty Name="ar_acc_no" ColumnName="ar_acc_no" />
+                <ScalarProperty Name="cash_acc_no" ColumnName="cash_acc_no" />
+                <ScalarProperty Name="inv_code" ColumnName="inv_code" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spLoadBayarAll" FunctionName="SRSModel.Store.spLoadBayarAll">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="SRSModel.spLoadBayarAll_Result">
+                <ScalarProperty Name="base_entry" ColumnName="base_entry" />
+                <ScalarProperty Name="card_code" ColumnName="card_code" />
+                <ScalarProperty Name="card_name" ColumnName="card_name" />
+                <ScalarProperty Name="grkey" ColumnName="grkey" />
+                <ScalarProperty Name="invoicekey" ColumnName="invoicekey" />
+                <ScalarProperty Name="pembayaran" ColumnName="pembayaran" />
+                <ScalarProperty Name="net_weight" ColumnName="net_weight" />
+                <ScalarProperty Name="date_out" ColumnName="date_out" />
+                <ScalarProperty Name="create_date" ColumnName="create_date" />
+                <ScalarProperty Name="jenis_mitra" ColumnName="jenis_mitra" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

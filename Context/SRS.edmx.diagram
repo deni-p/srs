@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="ef19fdc9a4ba4278b48955675bd674ac" Name="Diagram1" ZoomLevel="85">
+        <EntityTypeShape EntityType="SRSModel.User" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SRSModel.tbl_transit_scan_id_device" Width="2.25" PointX="3.875" PointY="12.625" />
+        <EntityTypeShape EntityType="SRSModel.tbl_transit_scan_id_timbangan" Width="4.125" PointX="8.75" PointY="16.25" />
+        <EntityTypeShape EntityType="SRSModel.tbl_transit_timbangan" Width="3.625" PointX="3" PointY="20.5" />
+        <EntityTypeShape EntityType="SRSModel.shared_timbangan_in" Width="3.875" PointX="5" PointY="0.75" />
+        <EntityTypeShape EntityType="SRSModel.shared_core_sampling" Width="2.875" PointX="9.375" PointY="8.75" />
+        <EntityTypeShape EntityType="SRSModel.device_config" Width="1.5" PointX="11.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SRSModel.lookup_header" Width="1.5" PointX="13.375" PointY="14.125" />
+        <EntityTypeShape EntityType="SRSModel.lookup_line" Width="1.5" PointX="15.625" PointY="14" />
+        <EntityTypeShape EntityType="SRSModel.user_master_form" Width="1.5" PointX="13.375" PointY="5" />
+        <EntityTypeShape EntityType="SRSModel.user_master_menu" Width="1.5" PointX="15.625" PointY="1" />
+        <EntityTypeShape EntityType="SRSModel.user_master_modules" Width="1.5" PointX="13.375" PointY="2.125" />
+        <EntityTypeShape EntityType="SRSModel.user_table" Width="1.5" PointX="15.625" PointY="9" />
+        <EntityTypeShape EntityType="SRSModel.user_table_group" Width="1.5" PointX="13.375" PointY="9.625" />
+        <AssociationConnector Association="SRSModel.FK_lookup_line_lookup_header" />
+        <AssociationConnector Association="SRSModel.FK_user_master_menu_user_master_form" />
+        <AssociationConnector Association="SRSModel.FK_user_master_menu_user_master_modules" />
+        <AssociationConnector Association="SRSModel.FK_User_Table_User_table_group" />
+        <EntityTypeShape EntityType="SRSModel.user_access_list" Width="1.5" PointX="6.375" PointY="4.75" />
+        <EntityTypeShape EntityType="SRSModel.tbl_kabupaten" Width="1.5" PointX="15.375" PointY="6.125" />
+        <EntityTypeShape EntityType="SRSModel.tbl_kecamatan" Width="1.5" PointX="17.625" PointY="5.875" />
+        <EntityTypeShape EntityType="SRSModel.tbl_kelurahan" Width="1.5" PointX="19.875" PointY="5.875" />
+        <AssociationConnector Association="SRSModel.FK_tbl_kecamatan_tbl_kabupaten" />
+        <AssociationConnector Association="SRSModel.FK_tbl_kelurahan_tbl_kecamatan" />
+        <EntityTypeShape EntityType="SRSModel.tiket_header" Width="1.5" PointX="9.375" PointY="12.75" />
+        <EntityTypeShape EntityType="SRSModel.tiket_template" Width="1.5" PointX="3.375" PointY="16.75" />
+        <EntityTypeShape EntityType="SRSModel.trans_data_saldo" Width="1.5" PointX="18.375" PointY="8.75" />
+        <EntityTypeShape EntityType="SRSModel.tbl_pendaftaran_mobil" Width="1.5" PointX="0.75" PointY="13.5" />
+        <AssociationConnector Association="SRSModel.FK_tbl_transit_scan_id_device_tbl_pendaftaran_mobil" />
+        <AssociationConnector Association="SRSModel.FK_tbl_transit_scan_id_timbangan_tbl_pendaftaran_mobil" />
+        <AssociationConnector Association="SRSModel.FK_tbl_transit_timbangan_tbl_pendaftaran_mobil" />
+        <EntityTypeShape EntityType="SRSModel.tbl_periode_giling" Width="1.5" PointX="8.375" PointY="3.75" />
+        <EntityTypeShape EntityType="SRSModel.tbl_periode_trx" Width="1.5" PointX="10.375" PointY="4.75" />
+        <EntityTypeShape EntityType="SRSModel.tbl_transit_core_sampling" Width="2.25" PointX="3" PointY="6.375" />
+        <AssociationConnector Association="SRSModel.FK_tbl_transit_core_sampling_tbl_pendaftaran_mobil" />
+        <EntityTypeShape EntityType="SRSModel.rendeman" Width="1.5" PointX="5.375" PointY="16.75" />
+        <EntityTypeShape EntityType="SRSModel.master_list" Width="1.5" PointX="2.375" PointY="25.75" />
+        <EntityTypeShape EntityType="SRSModel.Masterlist2" Width="1.5" PointX="8" PointY="25.75" />
+        <EntityTypeShape EntityType="SRSModel.Tiket" Width="1.5" PointX="4.25" PointY="25.75" />
+        <EntityTypeShape EntityType="SRSModel.tiket_history" Width="1.5" PointX="6.125" PointY="25.75" />
+        <EntityTypeShape EntityType="SRSModel.tbl_error" Width="1.5" PointX="6.375" PointY="7.75" />
+        <EntityTypeShape EntityType="SRSModel.trans_data_header" Width="1.5" PointX="13.375" PointY="21.75" />
+        <EntityTypeShape EntityType="SRSModel.trans_data_line" Width="1.5" PointX="15.625" PointY="18" />
+        <EntityTypeShape EntityType="SRSModel.trans_data_type" Width="1.5" PointX="13.375" PointY="18.625" />
+        <AssociationConnector Association="SRSModel.FK_Detail_TransData_transdata" />
+        <AssociationConnector Association="SRSModel.FK_trans_data_line_trans_data_type" />
+        <EntityTypeShape EntityType="SRSModel.m_conf_acc" Width="1.5" PointX="18.375" PointY="0.75" />
+        <AssociationConnector Association="SRSModel.FK_trans_data_header_trans_data_type" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
